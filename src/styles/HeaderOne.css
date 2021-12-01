@@ -1,0 +1,37 @@
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20vh;
+}
+.home-logo {
+  width: 25vw;
+  height: auto;
+  margin-right: 40px;
+}
+.home-btns {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 40px;
+}
+.btn {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  border-radius: 5px;
+}
+.btn-signup {
+    background-color: #E5E1E1;
+    margin-right: 10px;
+}
+.btn-signup:hover{
+  background-color:#C4C4C4;
+}
+.btn-login {
+  background-color: #FFD7D7;
+  margin-left: 10px;
+}
+.btn-login:hover{
+  background-color:#E7A0A0;
+}
