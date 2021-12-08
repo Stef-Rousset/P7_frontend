@@ -1,0 +1,35 @@
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #E5E1E1;
+  color: black;
+  font-weight: bold;
+}
+.signup-form-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.signup-form > h3 {
+  align-self: center;
+  margin-block-start: 0;
+}
+.signup-form > p {
+  font-style: italic;
+  align-self: end;
+  color: red;
+  font-size: 12px;
+}
+input {
+  width: 18vw;
+  height: 4vh;
+  margin: 5px 3px;
+}
+input[type="submit"] {
+  align-self: center;
+  background-color: #FFD7D7;
+  border-width: 0;
+  color: black;
+  font-weight: bold;
+}
