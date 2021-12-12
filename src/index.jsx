@@ -18,12 +18,13 @@ ReactDOM.render(
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        {/*<Route path="/profile/:id" element={<Profile />} />
-        <Route path="/moderation" element={<Moderation />} />
-        <Route path="/posts" element={<Posts />} >
-          <Route path='new' element={<NewPost />} />
-          <Route path='myposts/:id' element={<MyPosts />} />
-        </Route>*/}
+        {/*<Route path="/profile/:id" element={<Profile />} />*/}
+{/*        <Route path="/moderation" element={<Moderation />} />*/}
+{/*        <Route path="/posts" element={<Posts />} >*/}
+{/*          <Route path=":id" element={<Post />} />*/}
+{/*        </Route>*/}
+{/*        <Route path="/new_post" element={<NewPost />} />*/}
+{/*        <Route path="/myposts/:id" element={<MyPosts />} />*/}
         <Route path="*" element={<HandleErrorNavigation />} />
       </Routes>
     </Router>
