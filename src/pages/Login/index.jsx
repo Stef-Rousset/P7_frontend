@@ -22,7 +22,7 @@ function Login() {
           .then(data => {
                   // stocker le token généré et rediriger sur la page des posts
                 localStorage.setItem('token', data.token)
-                navigate('/')
+                navigate('/posts')
           })
           .catch(function(error){
               alert(error);
@@ -43,12 +43,10 @@ function Login() {
               <label htmlFor="email">Email</label>
               <input type="text" name="email" id="email" placeholder="paul.martin@gmail.com" { ...register("email", { required: true, pattern: /^[\S]+@[\S]+\.{1}[\S]+$/ }) } />
             </div>
-            { errors.email && <p>Un email valide est requis</p>}
             <div className="signup-form-line">
               <label htmlFor="password">Mot de passe</label>
               <input type="text" name="password" id="password" { ...register("password", { required: true, minLength: 6, maxLength: 30, pattern: /[a-zA-Z\d]+$/ }) } />
             </div>
-            { errors.password && <p>Un password de 6 à 30 caratères comprenant une minuscule, une majuscule, un chiffre et sans espace est requis</p>}
             <input type="submit" />
           </form >
       </div>

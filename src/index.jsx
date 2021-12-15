@@ -5,9 +5,9 @@ import './index.css';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Posts from './pages/Posts';
 import HandleErrorNavigation from './pages/HandleErrorNavigation';
 import Footer from './components/Footer';
-
 
 
 
@@ -18,13 +18,12 @@ ReactDOM.render(
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        {/*<Route path="/profile/:id" element={<Profile />} />*/}
-{/*        <Route path="/moderation" element={<Moderation />} />*/}
-{/*        <Route path="/posts" element={<Posts />} >*/}
-{/*          <Route path=":id" element={<Post />} />*/}
-{/*        </Route>*/}
-{/*        <Route path="/new_post" element={<NewPost />} />*/}
-{/*        <Route path="/myposts/:id" element={<MyPosts />} />*/}
+        <Route path="/posts" element={<Posts />} />
+        {/*<Route path="/posts/:id" element={<Post />} />
+        <Route path="/new_post" element={<NewPost />} />
+        <Route path="/myposts/:id" element={<MyPosts />} />
+        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/moderation" element={<Moderation />} />*/}
         <Route path="*" element={<HandleErrorNavigation />} />
       </Routes>
     </Router>

@@ -1,6 +1,6 @@
-import '../styles/HeaderOne.css';
-import logoAbove from '../assets/icon-above.png';
 import { Link } from 'react-router-dom';
+import logoAbove from '../assets/icon-above.png';
+import '../styles/HeaderOne.css';
 
 function HeaderOne(){
   return(
