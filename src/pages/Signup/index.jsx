@@ -7,7 +7,7 @@ function Signup() {
   let navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onBlur' });
   const onSubmit = data => {
-      fetch("http://localhost:3000/api/users/signup", {
+      fetch("http://localhost:8080/api/users/signup", {
               method: "POST",
               headers: {  'Accept': 'application/json',
                           'Content-Type': 'application/json'

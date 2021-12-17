@@ -1,14 +1,17 @@
 import HeaderTwo from '../../components/HeaderTwo';
 import NavigationBar from '../../components/NavigationBar';
-import { getUserById } from '../../helpers/users';
 import { useState, useEffect } from 'react';
-import '../../styles/Posts.css'
+import '../../styles/Posts.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faComments, faThumbsUp, faThumbsDown, faTimes } from "@fortawesome/free-solid-svg-icons";
+
+
 
 function Posts(){
     const [posts, setPosts] = useState(null);
     useEffect(() => {
         function postsAll(){
-            fetch("http://localhost:3000/api/posts/index", {
+            fetch("http://localhost:8080/api/posts/index", {
                     method: "GET",
                     headers: {  'Accept': 'application/json',
                                 'Content-Type': 'application/json',
@@ -38,26 +41,25 @@ function Posts(){
               { posts && posts.map(post => (
                         <div key={post.id} className="post">
                             <div className="post-top">
-                              {/*<img src={ getUserById(post.userId).imageUrl } className='avatar' alt="avatar"  />*/}
+                              <img src={ post.User.imageUrl } className='avatar' alt="avatar"  />
                               <div className="post-title">
                                 <h4>{post.title}</h4>
                                 <p>likes</p>
                               </div>
-                              <p>publié le { new Date(post.createdAt).toLocaleDateString() }</p>
-                              {/*<p>publié par { getUserById(post.userId).lastname } le { post.createdAt }</p>*/}
+                              <p className="post-published">publié par { post.User.firstName } { post.User.lastName } le { new Date(post.createdAt).toLocaleDateString() }</p>
                             </div>
                             <div className="post-text">
                               <p>{ post.content }</p>
                             </div>
                             <div className='post-bottom'>
                               <div className="post-bottom-like">
-                                 <i className="fa-light fa-thumbs-up"></i><p>Liker</p><i className="fa-light fa-thumbs-down"></i>
+                                 <FontAwesomeIcon icon={ faThumbsUp } /><p>Liker</p><FontAwesomeIcon icon={ faThumbsDown } />
                               </div>
                               <div className="post-bottom-comment">
-                                <p>Commentaires</p><i className="fa-light fa-comment-lines"></i>
+                                <p>Commentaires</p><FontAwesomeIcon icon={ faComments } />
                               </div>
                               <div className="post-bottom-signal">
-                                <p>Signaler</p><i className="fa-regular fa-xmark"></i>
+                                <p>Signaler</p><FontAwesomeIcon icon={ faTimes } />
                               </div>
                             </div>
                         </div>

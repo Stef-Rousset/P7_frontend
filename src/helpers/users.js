@@ -7,7 +7,7 @@ export const getUserById = (id) => {
                   'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 }
   }
-  fetch(`http://localhost:3000/api/users/profile/${id}`, requestOptions)
+  fetch(`http://localhost:8080/api/users/profile/${id}`, requestOptions)
   .then(response => response.json())
   .then(data => { return data.user } )
   .catch(function(error){
