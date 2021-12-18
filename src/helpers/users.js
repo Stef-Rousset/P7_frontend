@@ -1,38 +1,31 @@
 
-export const getUserById = (id) => {
-  const requestOptions = {
+export const isAdmin = (token) => {
+    const requestOptions = {
       method: "GET",
       headers: {  'Accept': 'application/json',
                   'Content-Type': 'application/json',
                   'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 }
   }
-  fetch(`http://localhost:8080/api/users/profile/${id}`, requestOptions)
+  fetch(`http://localhost:8080/api/users/profile`, requestOptions)
   .then(response => response.json())
-  .then(data => { return data.user } )
+  .then(data => {
+      if (data.user.role === 'admin'){
+        return true
+      } else {
+        return false
+      }
+  })
   .catch(function(error){
       alert(error);
   });
-
 }
-export const getUserImgByToken = () => {
-  const requestOptions = {
-      method: "GET",
-      headers: {  'Accept': 'application/json',
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                }
-  }
-  fetch('http://localhost:8080/api/users/profile', requestOptions)
-  .then(response => response.json())
-  .then(data => { return data.user.imageUrl } )
-  .catch(function(error){
-      alert(error);
-  });
 
-}
 export const handleLogOut = () => {
     localStorage.removeItem('token')
+    localStorage.removeItem('img')
 }
+
+
 
 

@@ -20,6 +20,7 @@ ReactDOM.render(
         <Route path="/login" element={<Login />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/my_posts" element={<Posts />} />
+        <Route path="/posts/latest" element={<Posts />} />
         {/*<Route path="/posts/:id" element={<Post />} />
         <Route path="/new_post" element={<NewPost />} />
         <Route path="/profile" element={<Profile />} />

@@ -1,6 +1,6 @@
 import navImage from '../assets/nav_img.png';
 import { Link } from 'react-router-dom';
-import { handleLogOut } from '../helpers/users';
+import { handleLogOut, isAdmin } from '../helpers/users';
 import '../styles/NavigationBar.css';
 
 function NavigationBar(){
@@ -14,13 +14,12 @@ function NavigationBar(){
           <Link to="/new_post" className="btn btn-nav">Ajouter un post</Link>
         }
         { window.location.pathname !== '/my_posts' &&
-          <Link to="/my_posts" className="btn btn-nav">Voir mes posts</Link>
+          <Link to="/my_posts" className="btn btn-nav" onClick={() => { window.location.reload()}}> Voir mes posts</Link>
         }
         { window.location.pathname !== '/profile' &&
           <Link to="/profile" className="btn btn-nav">Voir mon profil</Link>
         }
-        { window.location.pathname !== '/moderation' &&
-          //  ajouter && isAdmin
+        { window.location.pathname !== '/moderation' && isAdmin(localStorage.getItem('token')) &&
           <Link to="/moderation" className="btn btn-nav">Modération</Link>
         }
         <Link to="/" className="btn btn-nav" onClick={ handleLogOut }>Se déconnecter</Link>
