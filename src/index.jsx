@@ -19,10 +19,10 @@ ReactDOM.render(
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/posts" element={<Posts />} />
+        <Route path="/my_posts" element={<Posts />} />
         {/*<Route path="/posts/:id" element={<Post />} />
         <Route path="/new_post" element={<NewPost />} />
-        <Route path="/myposts/:id" element={<MyPosts />} />
-        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/moderation" element={<Moderation />} />*/}
         <Route path="*" element={<HandleErrorNavigation />} />
       </Routes>

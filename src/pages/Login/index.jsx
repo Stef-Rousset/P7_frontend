@@ -22,6 +22,7 @@ function Login() {
           .then(data => {
                   // stocker le token généré et rediriger sur la page des posts
                 localStorage.setItem('token', data.token)
+                localStorage.setItem('img', data.user.imageUrl)
                 navigate('/posts')
           })
           .catch(function(error){

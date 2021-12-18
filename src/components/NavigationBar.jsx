@@ -13,11 +13,11 @@ function NavigationBar(){
         { window.location.pathname !== '/new_post' &&
           <Link to="/new_post" className="btn btn-nav">Ajouter un post</Link>
         }
-        { window.location.pathname !== '/my_posts/:id' &&
-          <Link to="/my_posts/:id" className="btn btn-nav">Voir mes posts</Link>
+        { window.location.pathname !== '/my_posts' &&
+          <Link to="/my_posts" className="btn btn-nav">Voir mes posts</Link>
         }
-        { window.location.pathname !== '/profile/:id' &&
-          <Link to="/profile/:id" className="btn btn-nav">Voir mon profil</Link>
+        { window.location.pathname !== '/profile' &&
+          <Link to="/profile" className="btn btn-nav">Voir mon profil</Link>
         }
         { window.location.pathname !== '/moderation' &&
           //  ajouter && isAdmin

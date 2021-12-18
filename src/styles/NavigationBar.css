@@ -1,5 +1,7 @@
 .navbar {
   margin: 40px 40px 40px 0px;
+  position: sticky;
+  top: 40px;
 }
 .nav-container {
   display: flex;

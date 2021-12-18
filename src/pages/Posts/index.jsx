@@ -11,7 +11,13 @@ function Posts(){
     const [posts, setPosts] = useState(null);
     useEffect(() => {
         function postsAll(){
-            fetch("http://localhost:8080/api/posts/index", {
+            let path = ""
+            if (window.location.pathname === '/posts'){
+                path = "http://localhost:8080/api/posts/index"
+            } else if (window.location.pathname === '/my_posts'){
+                path = "http://localhost:8080/api/posts/my_posts"
+            }
+            fetch(path, {
                     method: "GET",
                     headers: {  'Accept': 'application/json',
                                 'Content-Type': 'application/json',
@@ -59,7 +65,7 @@ function Posts(){
                                 <p>Commentaires</p><FontAwesomeIcon icon={ faComments } />
                               </div>
                               <div className="post-bottom-signal">
-                                <p>Signaler</p><FontAwesomeIcon icon={ faTimes } />
+                                <p>Signaler</p><FontAwesomeIcon icon={ faTimes } color="red"/>
                               </div>
                             </div>
                         </div>
