@@ -62,3 +62,19 @@ export const addDislikeToPost = (id) => {
         alert(error);
     });
 }
+
+export const getTotalLikes = (id) => {
+    const requestOptions = {
+      method: "GET",
+      headers: {  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+    }
+    fetch(`http://localhost:8080/api/posts/${id}/likes`, requestOptions)
+    .then(response => response.json())
+    .then(totalLikes => {return totalLikes })
+    .catch(function(error){
+        alert(error);
+    });
+}
