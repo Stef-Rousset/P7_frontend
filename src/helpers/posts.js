@@ -28,8 +28,10 @@ export const addLikeToPost = (id) => {
     .then(response => {
         if (response.status === 201){
             alert('Like added to post')
+            window.location.reload()
         } else if (response.status === 200 ){
             alert('Like status modified')
+            window.location.reload()
         } else if (response.status === 401){
             alert('You cannot like or dislike your own post')
         }
@@ -52,8 +54,10 @@ export const addDislikeToPost = (id) => {
     .then(response => {
         if (response.status === 201){
             alert('Dislike added to post')
+            window.location.reload()
         } else if (response.status === 200 ){
             alert('Like status modified')
+            window.location.reload()
         } else if (response.status === 401){
             alert('You cannot like or dislike your own post')
         }
@@ -63,18 +67,5 @@ export const addDislikeToPost = (id) => {
     });
 }
 
-export const getTotalLikes = (id) => {
-    const requestOptions = {
-      method: "GET",
-      headers: {  'Accept': 'application/json',
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                },
-    }
-    fetch(`http://localhost:8080/api/posts/${id}/likes`, requestOptions)
-    .then(response => response.json())
-    .then(totalLikes => {return totalLikes })
-    .catch(function(error){
-        alert(error);
-    });
-}
+
+

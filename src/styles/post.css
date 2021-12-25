@@ -1,0 +1,28 @@
+.post-container {
+  display: flex;
+  justify-content: space-between;
+  height: 70vh;
+}
+.one-post {
+  width: 70vw;
+  margin: 40px;
+  box-shadow: 1px 1px 1px #E5E1E1;
+}
+.post-links {
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+.post-links:hover {
+  opacity: 0.8;
+  transform: scale(1.025);
+  cursor: pointer;
+}
+.icon-links {
+  color: #E7A0A0;
+  cursor: pointer;
+}
+.icon-links:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+}

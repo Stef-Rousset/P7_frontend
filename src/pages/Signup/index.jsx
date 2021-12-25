@@ -22,8 +22,10 @@ function Signup() {
           })
           .then(response => response.json())
           .then(data => {
-              // stocker le token dans le localStorage, puis message de succès et redirection sur la page des posts
+              // stocker dans le localStorage les infos nécessaires, puis message de succès et redirection sur la page des posts
               localStorage.setItem('token', data.token)
+              localStorage.setItem('img', data.user.imageUrl)
+              localStorage.setItem('id', data.user.id)
               alert(`Bienvenue ${data.user.firstName} ${data.user.lastName} au sein du réseau social interne de Groupomania ! `)
               navigate('/posts')
           })

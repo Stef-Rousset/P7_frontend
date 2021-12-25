@@ -1,14 +1,11 @@
 import HeaderTwo from '../../components/HeaderTwo';
 import NavigationBar from '../../components/NavigationBar';
-import { getIdFromToken } from '../../helpers/users';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/NewPost.css';
 
 
 function NewPost(){
-    const userId = getIdFromToken(localStorage.getItem('token'));
-    console.log(userId)
     let navigate = useNavigate();
     const { register, handleSubmit } = useForm({ mode: 'onBlur' });
     function onSubmit(){
@@ -21,13 +18,13 @@ function NewPost(){
                 body: JSON.stringify( {
                                       title: document.getElementById("title").value,
                                       content: document.getElementById("content").value,
-                                      userId: userId
+                                      userId: parseInt(localStorage.getItem('id'))
                                       }
                                     )
             })
             .then(response => response.json())
             .then(post => {
-                alert(`Le post ${ post.title } a bien été crée ! `)
+                alert("Votre post a bien été crée !")
                 navigate('/posts')
             })
             .catch(function(error){

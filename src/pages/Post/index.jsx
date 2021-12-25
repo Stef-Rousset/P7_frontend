@@ -1,17 +1,19 @@
 import HeaderTwo from '../../components/HeaderTwo';
 import NavigationBar from '../../components/NavigationBar';
-import { handlePostSignalment, addLikeToPost, addDislikeToPost, getTotalLikes } from '../../helpers/posts';
+import { handlePostSignalment, addLikeToPost, addDislikeToPost } from '../../helpers/posts';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import '../../styles/post.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments, faThumbsUp, faThumbsDown, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function Post(){
     const  { id } = useParams();
     const [post, setPost] = useState(null);
+    const [count, setCount] = useState(0);
     useEffect(() => {
         function getPost(){
-            fetch(`http://localhost:8080/api/posts/show/${id}`, {
+            fetch(`http://localhost:8080/api/posts/show/${id}/`, {
                           method: "GET",
                           headers: {  'Accept': 'application/json',
                                       'Content-Type': 'application/json',
@@ -19,25 +21,32 @@ function Post(){
                           }
             })
             .then(response => response.json())
-            .then(data => setPost(data.post))
+            .then(data => {
+                setPost(data.post)
+                data.post.Likes.map(post => {
+                  if (post.status === "like"){
+                        setCount(count + 1)
+                  }
+                })
+            })
             .catch(function(error){
                 console.log(error)
             })
         }
         getPost();
-    }, [id]);
+    }, [id, count]);
 
     return(
-          <div className="post">
+          <div className="post-alone">
           < HeaderTwo />
           <div className="post-container">
-             {post && <div className="one-post">
+             { post && <div className="one-post">
                           <div className="post-top">
                             <div className="post-top-left">
                               <img src={ post.User.imageUrl } className='avatar' alt="avatar"  />
                               <div className="post-title">
                                 <h4>{post.title}</h4>
-                                <p>{ getTotalLikes(post.id) } likes</p>
+                                <p>{count} likes</p>
                               </div>
                             </div>
                             <p className="post-top-right">publié par { post.User.firstName } { post.User.lastName } le { new Date(post.createdAt).toLocaleDateString() }</p>
@@ -58,11 +67,11 @@ function Post(){
                               <p className="post-links" >Signaler</p><FontAwesomeIcon icon={ faTimes } className="icon-links"/>
                             </div>
                           </div>
-                        </div>
-                }
-            </div>
-          <div className="navbar">
-              < NavigationBar />
+                      </div>
+              }
+              <div className="navbar">
+                 < NavigationBar />
+              </div>
           </div>
       </div>
     );

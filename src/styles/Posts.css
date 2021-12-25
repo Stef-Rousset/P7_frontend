@@ -17,24 +17,6 @@
   margin-bottom: 20px;
   background-color: white;
 }
-.post-links {
-  font-size: 16px;
-  text-decoration: none;
-  color: black;
-}
-.post-links:hover {
-  opacity: 0.8;
-  transform: scale(1.025);
-  cursor: pointer;
-}
-.icon-links {
-  color: #E7A0A0;
-  cursor: pointer;
-}
-.icon-links:hover {
-  opacity: 0.8;
-  transform: scale(1.2);
-}
 .posts-all {
   display: flex;
   flex-direction: column;
@@ -70,6 +52,18 @@
   opacity: 0.7;
   font-size: 14px;
 }
+.post-more {
+  align-self: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.post-more:hover {
+  opacity: 0.8;
+  transform: scale(1.025);
+  cursor: pointer;
+}
 .post-top-right {
   font-style: italic;
   font-weight: 500;
@@ -100,4 +94,7 @@
   border-radius: 50%;
   height: 50px;
   box-shadow: 2px 2px 2px #E5E1E1;
+}
+.MuiPagiantion-root {
+  align-self: center;
 }
