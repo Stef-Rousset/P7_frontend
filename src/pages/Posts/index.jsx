@@ -8,7 +8,6 @@ import '../../styles/Posts.css';
 
 function Posts(){
     const [posts, setPosts] = useState(null);
-    const [error, setError] = useState('');
     const [page, setPage] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
     const perPage = 5;
@@ -33,14 +32,16 @@ function Posts(){
                 .then(response => response.json())
                 .then(postsList => {
                         setPosts(postsList)
+                        return null;
                 })
                 .catch(error => {
-                    setError(error.message)
+                    alert(error);
+                    return null;
                 })
         }
         postsAll(location)
     }, [location]); //pour que useEffect ne s'effectue qu'au premier render du composant
-
+      // fonctions pour gérer la pagination
       function currentData(posts) {
           const begin = (currentPage - 1) * perPage;
           const end = begin + perPage;
@@ -62,7 +63,6 @@ function Posts(){
           next(p)
           jump(p)
       };
-    if (error) return alert(error);
     return (
         <div className="posts">
           < HeaderTwo />

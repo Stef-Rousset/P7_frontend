@@ -1,9 +1,10 @@
 import HeaderTwo from '../../components/HeaderTwo';
 import NavigationBar from '../../components/NavigationBar';
-import { handlePostSignalment, addLikeToPost, addDislikeToPost } from '../../helpers/posts';
+import Comments from '../../components/Comments';
+import { handlePostSignalment, addLikeToPost, addDislikeToPost, handleComments, handleSuppressPost } from '../../helpers/posts';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import '../../styles/post.css';
+import '../../styles/Post.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments, faThumbsUp, faThumbsDown, faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,14 +24,12 @@ function Post(){
             .then(response => response.json())
             .then(data => {
                 setPost(data.post)
-                data.post.Likes.map(post => {
-                  if (post.status === "like"){
-                        setCount(count + 1)
-                  }
-                })
+                setCount(data.post.Likes.filter(like => like.status === "like").length)
+                return null;
             })
             .catch(function(error){
-                console.log(error)
+                alert(error)
+                return null;
             })
         }
         getPost();
@@ -40,7 +39,7 @@ function Post(){
           <div className="post-alone">
           < HeaderTwo />
           <div className="post-container">
-             { post && <div className="one-post">
+             {post && <div className="one-post">
                           <div className="post-top">
                             <div className="post-top-left">
                               <img src={ post.User.imageUrl } className='avatar' alt="avatar"  />
@@ -56,18 +55,27 @@ function Post(){
                           </div>
                           <div className='post-bottom'>
                             <div className="post-bottom-like">
-                               <FontAwesomeIcon icon={ faThumbsUp } className="icon-links" onClick={() => { addLikeToPost(post.id) }} />
+                               <FontAwesomeIcon icon={ faThumbsUp } className="icon-links" onClick={() => { addLikeToPost(post.id); setCount(count + 1) }} />
                                <p>Like</p>
-                               <FontAwesomeIcon icon={ faThumbsDown } className="icon-links" onClick={() => { addDislikeToPost(post.id) }} />
+                               <FontAwesomeIcon icon={ faThumbsDown } className="icon-links" onClick={() => { addDislikeToPost(post.id); setCount(count - 1) }} />
                             </div>
-                            <div className="post-bottom-comment">
+                            <div className="post-bottom-comment" onClick={() => { handleComments() }}>
                               <p className="post-links">Commentaires</p><FontAwesomeIcon icon={ faComments } className="icon-links" />
                             </div>
                             <div className="post-bottom-signal" onClick={() => { handlePostSignalment(post.id) }}>
                               <p className="post-links" >Signaler</p><FontAwesomeIcon icon={ faTimes } className="icon-links"/>
                             </div>
+                            { post.id === parseInt(localStorage.getItem('id')) ?
+                              <div classname='post-bottom-suppress' onClick={() => { handleSuppressPost(post.id) }}>
+                                <p>Supprimer le post</p>
+                              </div>
+                              : null
+                            }
                           </div>
-                      </div>
+                           <div className="comments show-comments">
+                           <Comments post={post}/>
+                          </div>
+                        </div>
               }
               <div className="navbar">
                  < NavigationBar />

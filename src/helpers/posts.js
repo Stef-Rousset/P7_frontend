@@ -9,9 +9,13 @@ export const handlePostSignalment = (id) => {
       body: JSON.stringify({ id: `${id}` })
     }
     fetch(`http://localhost:8080/api/posts/post_signalments/new`, requestOptions)
-    .then(() => { alert('Post signalment added') })
+    .then(response => {
+        alert('Post signalment added')
+        return null;
+    })
     .catch(function(error){
         alert(error);
+        return null;
     });
 }
 
@@ -35,9 +39,11 @@ export const addLikeToPost = (id) => {
         } else if (response.status === 401){
             alert('You cannot like or dislike your own post')
         }
+        return null;
     })
     .catch(function(error){
         alert(error);
+        return null;
     });
 }
 
@@ -61,11 +67,35 @@ export const addDislikeToPost = (id) => {
         } else if (response.status === 401){
             alert('You cannot like or dislike your own post')
         }
+        return null;
     })
     .catch(function(error){
         alert(error);
+        return null;
     });
 }
 
+export const handleComments = () => {
+    const commentsDiv = document.querySelector('.comments');
+    commentsDiv.classList.toggle('show-comments');
+}
 
+export const handleSuppressPost = (id) => {
+    const requestOptions = {
+      method: "DELETE",
+      headers: {  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+    }
+    fetch(`http://localhost:8080/api/posts/delete/${id}`, requestOptions)
+    .then(response => {
+        alert('post deleted')
+        return null;
+    })
+    .catch(function(error){
+        alert(error);
+        return null;
+    });
+}
 

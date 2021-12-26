@@ -25,9 +25,11 @@ function Login() {
                 localStorage.setItem('img', data.user.imageUrl)
                 localStorage.setItem('id', data.user.id)
                 navigate('/posts')
+                return null;
           })
           .catch(function(error){
               alert(error);
+              return null;
           });
   };
 

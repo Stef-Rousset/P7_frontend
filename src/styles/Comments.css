@@ -1,0 +1,45 @@
+.post-comments {
+  display: flex;
+  flex-direction: column;
+}
+.post-comments h5 {
+  font-size: 14px;
+  margin-block-end: 16px;
+  margin-block-start: 10px;
+}
+.post-comments label {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.post-comments textarea {
+  height: 10vh;
+}
+.new-comment {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #E5E1E1;
+  padding:0 10px;
+}
+.new-comment-form {
+  display: flex;
+  flex-direction: column;
+}
+.old-comments {
+  display: flex;
+  flex-direction: column;
+}
+.old-comments h6 {
+  margin-block-start: 0;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 500;
+}
+.one-comment {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  background-color: #E5E1E1;
+  padding:0 10px;
+}

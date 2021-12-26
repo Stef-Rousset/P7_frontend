@@ -26,9 +26,11 @@ function NewPost(){
             .then(post => {
                 alert("Votre post a bien été crée !")
                 navigate('/posts')
+                return null;
             })
             .catch(function(error){
                 alert(error)
+                return null;
             })
     }
     return(

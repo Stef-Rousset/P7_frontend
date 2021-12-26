@@ -28,9 +28,11 @@ function Signup() {
               localStorage.setItem('id', data.user.id)
               alert(`Bienvenue ${data.user.firstName} ${data.user.lastName} au sein du réseau social interne de Groupomania ! `)
               navigate('/posts')
+              return null;
           })
           .catch(function(error){
-            alert(error);
+              alert(error);
+              return null;
           });
   };
 
