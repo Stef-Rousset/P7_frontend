@@ -41,7 +41,7 @@
 .post-bottom p {
   padding: 0 7px;
 }
-.post-bottom-like, .post-bottom-comment, .post-bottom-signal {
+.post-bottom-like, .post-bottom-comment, .post-bottom-signal, .post-bottom-suppress {
   display: flex;
   justify-content: space-between;
   align-items: center;

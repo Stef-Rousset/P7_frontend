@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import '../../styles/Post.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComments, faThumbsUp, faThumbsDown, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faComments, faThumbsUp, faThumbsDown, faTimes, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
 function Post(){
     const  { id } = useParams();
@@ -63,11 +63,11 @@ function Post(){
                               <p className="post-links">Commentaires</p><FontAwesomeIcon icon={ faComments } className="icon-links" />
                             </div>
                             <div className="post-bottom-signal" onClick={() => { handlePostSignalment(post.id) }}>
-                              <p className="post-links" >Signaler</p><FontAwesomeIcon icon={ faTimes } className="icon-links"/>
+                              <p className="post-links" >Signaler</p><FontAwesomeIcon icon={ faExclamationCircle } className="icon-links"/>
                             </div>
-                            { post.id === parseInt(localStorage.getItem('id')) ?
-                              <div classname='post-bottom-suppress' onClick={() => { handleSuppressPost(post.id) }}>
-                                <p>Supprimer le post</p>
+                            { post.userId === parseInt(localStorage.getItem('id')) ?
+                              <div className='post-bottom-suppress' onClick={() => { handleSuppressPost(post.id) }}>
+                                <p className="post-links">Supprimer le post</p><FontAwesomeIcon icon={ faTimes } className="icon-links"/>
                               </div>
                               : null
                             }
