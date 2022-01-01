@@ -3,13 +3,14 @@ import NavigationBar from '../../components/NavigationBar';
 import Comments from '../../components/Comments';
 import { handlePostSignalment, addLikeToPost, addDislikeToPost, handleComments, handleSuppressPost } from '../../helpers/posts';
 import { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import '../../styles/Post.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments, faThumbsUp, faThumbsDown, faTimes, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
 function Post(){
     const  { id } = useParams();
+    let navigate = useNavigate();
     const [post, setPost] = useState(null);
     const [count, setCount] = useState(0);
     useEffect(() => {
@@ -66,7 +67,7 @@ function Post(){
                               <p className="post-links" >Signaler</p><FontAwesomeIcon icon={ faExclamationCircle } className="icon-links"/>
                             </div>
                             { post.userId === parseInt(localStorage.getItem('id')) ?
-                              <div className='post-bottom-suppress' onClick={() => { handleSuppressPost(post.id) }}>
+                              <div className='post-bottom-suppress' onClick={() => { handleSuppressPost(post.id); navigate('/posts') }}>
                                 <p className="post-links">Supprimer le post</p><FontAwesomeIcon icon={ faTimes } className="icon-links"/>
                               </div>
                               : null

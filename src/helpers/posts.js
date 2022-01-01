@@ -75,11 +75,6 @@ export const addDislikeToPost = (id) => {
     });
 }
 
-export const handleComments = () => {
-    const commentsDiv = document.querySelector('.comments');
-    commentsDiv.classList.toggle('show-comments');
-}
-
 export const handleSuppressPost = (id) => {
     const requestOptions = {
       method: "DELETE",
@@ -98,4 +93,30 @@ export const handleSuppressPost = (id) => {
         return null;
     });
 }
+
+export const handleComments = () => {
+    const commentsDiv = document.querySelector('.comments');
+    commentsDiv.classList.toggle('show-comments');
+}
+
+export const handleCommentSignalment = (id) => {
+    const requestOptions = {
+      method: "POST",
+      headers: {  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+      body: JSON.stringify({ id: `${id}` })
+    }
+    fetch(`http://localhost:8080/api/comment_signalments/new`, requestOptions)
+    .then(response => {
+        alert('Comment signalment added')
+        return null;
+    })
+    .catch(function(error){
+        alert(error);
+        return null;
+    });
+}
+
 

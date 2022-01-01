@@ -1,0 +1,42 @@
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  height: 70vh;
+}
+.profile-infos, .profile-form {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+.profile-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.profile-avatar {
+  border-radius: 50%;
+  width: 30%;
+}
+.profile-firstname, .profile-lastname, .profile-email {
+  display: flex;
+  justify-content: space-between;
+}
+.profile-button {
+  background-color: #E5E1E1;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  padding: 8px;
+  width: 85%;
+  text-align: center;
+}
+.profile-button:hover {
+  cursor: pointer;
+}
+.profile-form {
+
+}
+.show-profile-element {
+  display: none;
+}

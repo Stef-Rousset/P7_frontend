@@ -27,6 +27,11 @@ export const handleLogOut = () => {
     localStorage.removeItem('id')
 }
 
-
+export const handleProfile = () => {
+  const profileDiv = document.querySelector('.profile-infos')
+  const profileForm = document.querySelector('.profile-form')
+  profileForm.classList.toggle('show-profile-element')
+  profileDiv.classList.toggle('show-profile-element')
+}
 
 

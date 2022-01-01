@@ -60,7 +60,7 @@ function Signup() {
             <label htmlFor="email">Email</label>
             <input type="text" name="email" id="email" placeholder="paul.martin@gmail.com" { ...register("email", { required: true, pattern: /^[\S]+@[\S]+\.{1}[\S]+$/ }) } />
           </div>
-          { errors.email && <p>Un email valide est requis</p>}
+          {errors.email && <p>Un email valide est requis</p>}
           <div className="signup-form-line">
             <label htmlFor="password">Mot de passe</label>
             <input type="text" name="password" id="password" { ...register("password", { required: true, minLength: 6, maxLength: 30, pattern: /[a-zA-Z\d]+$/ }) } />

@@ -1,4 +1,7 @@
 import { useForm } from 'react-hook-form';
+import { handleCommentSignalment } from './../helpers/posts';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import '../styles/Comments.css';
 
 function Comments(props){
@@ -43,6 +46,9 @@ function Comments(props){
                 <h5>Commentaire de { comment.User.firstName } { comment.User.lastName }</h5>
                 <h6>du { new Date(comment.createdAt).toLocaleDateString() }</h6>
                 <p>{ comment.content }</p>
+                <div className="comment-signal" onClick={() => { handleCommentSignalment(comment.id) }}>
+                  <p className="post-links" >Signaler</p><FontAwesomeIcon icon={ faExclamationCircle } className="icon-links"/>
+                </div>
               </div>
               )
           )}
