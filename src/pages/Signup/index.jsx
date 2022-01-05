@@ -63,7 +63,7 @@ function Signup() {
           {errors.email && <p>Un email valide est requis</p>}
           <div className="signup-form-line">
             <label htmlFor="password">Mot de passe</label>
-            <input type="text" name="password" id="password" { ...register("password", { required: true, minLength: 6, maxLength: 30, pattern: /[a-zA-Z\d]+$/ }) } />
+            <input type="password" name="password" id="password" { ...register("password", { required: true, minLength: 6, maxLength: 30, pattern: /[a-zA-Z\d]+$/ }) } />
           </div>
           { errors.password && <p>Un password de 6 à 30 caratères comprenant une minuscule, une majuscule, un chiffre et sans espace est requis</p>}
           <input type="submit" />

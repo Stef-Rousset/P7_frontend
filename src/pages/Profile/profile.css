@@ -3,10 +3,11 @@
   justify-content: space-between;
   height: 70vh;
 }
-.profile-infos, .profile-form {
+.profile-infos{
   display: flex;
   flex-direction: column;
-  margin: 40px;
+  width: 40%;
+  margin:  50px 40px 40px 80px;
 }
 .profile-top {
   display: flex;
@@ -15,10 +16,18 @@
 }
 .profile-avatar {
   border-radius: 50%;
-  width: 30%;
+  width: 15%;
+}
+.profile-bottom {
+  display: flex;
+  flex-direction: column;
 }
 .profile-firstname, .profile-lastname, .profile-email {
   display: flex;
+  justify-content: space-between;
+}
+.profile-buttons {
+  display:flex;
   justify-content: space-between;
 }
 .profile-button {
@@ -28,15 +37,17 @@
   margin-bottom: 5px;
   font-size: 14px;
   padding: 8px;
-  width: 85%;
+  width: 45%;
   text-align: center;
 }
 .profile-button:hover {
   cursor: pointer;
 }
 .profile-form {
-
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
 }
-.show-profile-element {
+.hide-profile-element {
   display: none;
 }

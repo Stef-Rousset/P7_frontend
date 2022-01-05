@@ -49,7 +49,7 @@ function Login() {
             </div>
             <div className="signup-form-line">
               <label htmlFor="password">Mot de passe</label>
-              <input type="text" name="password" id="password" { ...register("password", { required: true, minLength: 6, maxLength: 30, pattern: /[a-zA-Z\d]+$/ }) } />
+              <input type="password" name="password" id="password" { ...register("password", { required: true, minLength: 6, maxLength: 30, pattern: /[a-zA-Z\d]+$/ }) } />
             </div>
             <input type="submit" />
           </form >
