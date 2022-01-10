@@ -3,12 +3,12 @@ import NavigationBar from '../../components/NavigationBar';
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { handleProfile, handleDeleteProfile } from '../../helpers/users';
+import { handleProfile, handleDeleteProfile, handlePassword, handleAvatar, deleteErrors  } from '../../helpers/users';
 import './profile.css';
 
 function Profile(){
     const [user, setUser] = useState();
-    const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onBlur' });
+    const { register, handleSubmit, formState: { errors }} = useForm({ mode: 'onBlur' });
     const navigate = useNavigate();
 
     function onSubmit(data){
@@ -108,7 +108,7 @@ function Profile(){
                           </div>
                         </div>
                         <div className='profile-buttons'>
-                          <div className="profile-button" onClick={() => { handleProfile() }}>
+                          <div className="profile-button" onClick={() => { handleProfile(); deleteErrors() }}>
                             Modifier mon profil
                           </div>
                           <div className="profile-button" onClick={() => { handleDeleteProfile(); navigate('/signup') }}>
@@ -117,22 +117,40 @@ function Profile(){
                         </div>
                       </div>
                       <form className="profile-form hide-profile-element" onSubmit={ handleSubmit(onSubmit) }>
-                        <label htmlFor="firstName">Prénom</label>
-                        <input type="text" name="firstName" id="firstName" defaultValue={user.firstName} { ...register("firstName", { required: true, minLength: 2, pattern: /^[a-zA-Z][a-zA-Z-\s]+[a-zA-Z]$/ }) } />
-                        {errors.firstName && <p>Un prénom d'au moins 2 caractères est requis</p>}
-                        <label htmlFor="lastName">Nom</label>
-                        <input type="text" name="lastName" id="lastName" defaultValue={user.lastName} { ...register("lastName", { required: true, minLength: 1, pattern: /^[a-zA-Z][a-zA-Z-\s]+[a-zA-Z]$/ })} />
-                        {errors.lastName && <p>Un nom d'au moins 1 caractère est requis</p>}
-                        <label htmlFor="email">Email</label>
-                        <input type="text" name="email" id="email" defaultValue={user.email} { ...register("email", { required: true, pattern: /^[\S]+@[\S]+\.{1}[\S]+$/ }) } />
-                        {errors.email && <p>Un email valide est requis</p>}
-                        <label htmlFor="password">Mot de passe</label>
-                        <input type="password" name="password" id="password" { ...register("password", { required: true, minLength: 6, maxLength: 30, pattern: /[a-zA-Z\d]+$/ }) } />
-                        { errors.password && <p>Un password de 6 à 30 caratères comprenant une minuscule, une majuscule, un chiffre et sans espace est requis</p>}
-                        <label htmlFor="imageUrl">Avatar</label>
-                        <input type="file" name="imageUrl" id="imageUrl" { ...register("imageUrl")} />
-                        { errors.imageUrl && <p>Seules sont autorisées les extensions .jpg, .png et .jpeg</p>}
-                        <input type="submit" />
+                        <h3>Modifier vos informations</h3>
+                        <div className="profile-form-infos">
+                          <div className="profile-firstname" >
+                            <label htmlFor="firstName">Prénom</label>
+                            <input type="text" name="firstName" id="firstName" defaultValue={user.firstName} { ...register("firstName", { required: true, minLength: 2, pattern: /^[a-zA-Z][a-zA-Z-\s]+[a-zA-Z]$/ }) } />
+                          </div>
+                          {errors.firstName && <p className="errors">Un prénom d'au moins 2 caractères est requis</p>}
+                          <div className="profile-lastname">
+                            <label htmlFor="lastName">Nom</label>
+                            <input type="text" name="lastName" id="lastName" defaultValue={user.lastName} { ...register("lastName", { required: true, minLength: 1, pattern: /^[a-zA-Z][a-zA-Z-\s]+[a-zA-Z]$/ })} />
+                          </div>
+                          {errors.lastName && <p className="errors">Un nom d'au moins 1 caractère est requis</p>}
+                          <div className="profile-email">
+                            <label htmlFor="email">Email</label>
+                            <input type="text" name="email" id="email" defaultValue={user.email} { ...register("email", { required: true, pattern: /^[\S]+@[\S]+\.{1}[\S]+$/ }) } />
+                          </div>
+                          {errors.email && <p className="errors">Un email valide est requis</p>}
+                          <h4 className="change-password" onClick={() => { handlePassword() }}>Modifier le mot de passe</h4>
+                          <div className="profile-password hide-profile-element">
+                            <label htmlFor="password">Mot de passe</label>
+                            <input type="password" name="password" id="password" { ...register("password", { required: true, minLength: 6, maxLength: 30, pattern: /[a-zA-Z\d]+$/ }) } />
+                          </div>
+                          { errors.password && <p className="errors">Un password de 6 à 30 caratères comprenant une minuscule, une majuscule, un chiffre et sans espace est requis</p>}
+                          <h4 className="change-avatar" onClick={() => { handleAvatar() }}>Modifier votre photo</h4>
+                          <div className="profile-form-avatar hide-profile-element">
+                            <label htmlFor="imageUrl">Avatar</label>
+                            <input type="file" name="imageUrl" id="imageUrl" { ...register("imageUrl")} />
+                          </div>
+                          { errors.imageUrl && <p className="errors">Seules sont autorisées les extensions .jpg, .png et .jpeg</p>}
+                        </div>
+                        <div className="profile-form-buttons">
+                          <input type="submit" className="profile-form-button" />
+                          <button className="profile-form-button" onClick={() => { handleProfile() }} >Annuler</button>
+                        </div>
                       </form>
                       </>
               }

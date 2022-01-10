@@ -21,12 +21,12 @@
   color: red;
   font-size: 12px;
 }
-input {
+.signup-form input {
   width: 18vw;
   height: 4vh;
   margin: 5px 3px;
 }
-input[type="submit"] {
+.signup-form input[type="submit"] {
   align-self: center;
   background-color: #FFD7D7;
   border-width: 0;
