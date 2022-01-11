@@ -9,6 +9,7 @@ import Posts from './pages/Posts';
 import Post from './pages/Post';
 import NewPost from './pages/NewPost';
 import Profile from './pages/Profile';
+import Moderation from './pages/Moderation';
 import HandleErrorNavigation from './pages/HandleErrorNavigation';
 import Footer from './components/Footer';
 
@@ -26,7 +27,7 @@ ReactDOM.render(
         <Route path="/posts/:id" element={<Post />} />
         <Route path="/new_post" element={<NewPost />} />
         <Route path="/profile" element={<Profile />} />
-        {/*<Route path="/moderation" element={<Moderation />} />*/}
+        <Route path="/moderation" element={<Moderation />} />
         <Route path="*" element={<HandleErrorNavigation />} />
       </Routes>
     </Router>

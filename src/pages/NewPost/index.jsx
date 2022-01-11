@@ -2,7 +2,7 @@ import HeaderTwo from '../../components/HeaderTwo';
 import NavigationBar from '../../components/NavigationBar';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/NewPost.css';
+import './newPost.css';
 
 
 function NewPost(){

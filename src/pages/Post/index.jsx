@@ -4,7 +4,7 @@ import Comments from '../../components/Comments';
 import { handlePostSignalment, addLikeToPost, addDislikeToPost, handleComments, handleSuppressPost } from '../../helpers/posts';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
-import '../../styles/Post.css';
+import './post.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments, faThumbsUp, faThumbsDown, faTimes, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 

@@ -1,6 +1,6 @@
 import HeaderOne from '../../components/HeaderOne';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/Error.css'
+import './handleErrorNavigation.css'
 
 function HandleErrorNavigation() {
   const navigate = useNavigate();

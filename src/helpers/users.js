@@ -44,22 +44,15 @@ export const handleDeleteProfile = () => {
         return null;
     });
 }
-export const handlePassword = () => {
-  const changePassword = document.querySelector('.change-password');
+export const handlePassword = (event) => {
   const passwordDiv = document.querySelector('.profile-password');
-  changePassword.addEventListener('click', function(){
-      passwordDiv.classList.toggle('hide-profile-element');
-      changePassword.classList.toggle('hide-profile-element');
-  })
+  event.target.classList.toggle('hide-profile-element');
+  passwordDiv.classList.toggle('hide-profile-element');
 }
-export const handleAvatar = () => {
-  const changeAvatar = document.querySelector('.change-avatar');
+export const handleAvatar = (event) => {
   const avatarDiv = document.querySelector('.profile-form-avatar');
-  console.log(avatarDiv)
-  changeAvatar.addEventListener('click', function(){
-      avatarDiv.classList.toggle('hide-profile-element');
-      changeAvatar.classList.toggle('hide-profile-element');
-  })
+  event.target.classList.toggle('hide-profile-element');
+  avatarDiv.classList.toggle('hide-profile-element');
 }
 export const deleteErrors = () => {
   const errors = document.querySelectorAll('.errors');

@@ -1,0 +1,14 @@
+.moderation-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #E5E1E1;
+  height: 70vh;
+}
+.moderation-dashboard {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 60%;
+  margin:  40px 40px 40px 80px;
+  padding: 5px;
+}

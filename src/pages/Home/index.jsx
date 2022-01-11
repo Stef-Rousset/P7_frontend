@@ -1,6 +1,6 @@
 import homeImg from '../../assets/home_img.png';
 import HeaderOne from '../../components/HeaderOne';
-import '../../styles/Home.css';
+import './home.css';
 
 
 function Home() {
