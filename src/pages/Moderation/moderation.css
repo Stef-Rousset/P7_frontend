@@ -3,12 +3,24 @@
   justify-content: space-around;
   background-color: #E5E1E1;
   height: 70vh;
+  overflow: scroll;
 }
 .moderation-dashboard {
   display: flex;
   flex-direction: column;
-  background-color: white;
   width: 60%;
+  height: fit-content;
   margin:  40px 40px 40px 80px;
-  padding: 5px;
+}
+.moderation-dashboard h3 {
+  text-align: center;
+}
+.moderation-dashboard-posts, .moderation-dashboard-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.moderation-dashboard-posts {
+  margin-bottom: 15px;
 }

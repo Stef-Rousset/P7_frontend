@@ -8,9 +8,11 @@
   flex-direction: column;
   align-items: center;
   background-color: white;
+  width: 20vw;
+  padding-bottom: 5px;
 }
 .nav-logo {
-  width: 20vw;
+  width: 90%;
 }
 .btn-nav {
   background-color: #E5E1E1;
@@ -18,7 +20,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 14px;
-  padding: 8px;
+  padding: 5px;
   width: 85%;
   text-align: center;
 }

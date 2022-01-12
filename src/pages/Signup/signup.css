@@ -5,6 +5,8 @@
   background-color: #E5E1E1;
   color: black;
   font-weight: bold;
+  margin-right: 20px;
+  width: 30%;
 }
 .signup-form-line {
   display: flex;
@@ -21,8 +23,11 @@
   color: red;
   font-size: 12px;
 }
+.signup-form label {
+  width: 35%;
+}
 .signup-form input {
-  width: 18vw;
+  width: 60%;
   height: 4vh;
   margin: 5px 3px;
 }

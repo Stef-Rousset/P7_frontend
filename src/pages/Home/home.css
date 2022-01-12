@@ -1,21 +1,29 @@
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
 .home-container {
   display: flex;
   justify-content: space-around;
-  align-items: start;
-  height: 60vh;
+  align-items: center;
+  height: 65vh;
 }
 .home-container-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  margin-left: 20px;
+  margin-right: 10px;
+  width: 65%;
 }
 .home-container-text h2 {
     opacity: 0.7;
     font-size: 20px;
+    text-align: justify;
 }
 .home-container-image {
   width: 40vw;
+  height: 90%;
 }
 
 

@@ -2,13 +2,14 @@
   display: flex;
   justify-content: space-between;
   height: 70vh;
+  background-color: #E5E1E1;
 }
 .new-post-content {
   display: flex;
   flex-direction: column;
   width: 60vw;
   margin: 40px;
-  background-color: #E5E1E1;
+  background-color: white;
 }
 .new-post-content > h3 {
   text-align: center;
@@ -22,6 +23,8 @@
 }
 .new-post-form label{
   align-self: start;
+  margin-bottom: 5px;
+  font-weight: 400;
 }
 input[name="title"]{
   width: 98%;
@@ -33,6 +36,14 @@ textarea[name="content"]{
   margin-bottom: 25px;
   height: 40%;
 }
-input[type="submit"]{
+.new-post-submit {
+  width: 30%;
+  align-self: center;
+  margin: 10px 0;
+  background-color: #FFD7D7;
+  border-width: 0;
   cursor: pointer;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
 }

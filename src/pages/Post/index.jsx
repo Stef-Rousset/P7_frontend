@@ -76,7 +76,7 @@ function Post(){
                            <div className="comments show-comments">
                            <Comments post={post}/>
                           </div>
-                        </div>
+                      </div>
               }
               <div className="navbar">
                  < NavigationBar />

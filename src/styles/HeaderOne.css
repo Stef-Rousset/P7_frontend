@@ -8,6 +8,7 @@
   width: 25vw;
   height: auto;
   margin-right: 40px;
+  max-height: fit-content;
 }
 .home-btns {
   display: flex;

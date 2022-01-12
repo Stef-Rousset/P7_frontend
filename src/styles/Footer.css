@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 20vh;
+  height: 15vh;
 }
 .footer-container-networks {
   display: flex;
@@ -12,10 +12,10 @@
 }
 .footer-container-logo {
   width: 15vw;
-  height: 20vh;
+  height: auto;
 }
 .footer-container-image {
   width: 6vw;
-  height: 8vh;
+  height: auto;
 }
 
