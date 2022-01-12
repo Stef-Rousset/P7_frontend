@@ -27,28 +27,67 @@
 }
 
 
+/*responsive */
 
-
-/*.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*Small devices (landscape phones, 576px and up)*/
+@media (max-width: 767px) {
+  * {
+    box-sizing: border-box;
   }
-  to {
-    transform: rotate(360deg);
+  .home-container-image {
+    display: none;
   }
-}*/
+  .home-header {
+    flex-direction: column;
+    height: 30vh;
+  }
+  .home-logo {
+    margin-right: 0;
+    width: 40vw;
+  }
+  .home-btns {
+    margin-right: 0;
+  }
+  .home-container {
+    height: 55vh;
+  }
+  .home-container-text {
+    width: 90%;
+  }
+  .home-container-text h1, h2 {
+    text-align: center;
+  }
+}
+/*Medium devices (tablets portrait, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+  * {
+    box-sizing: border-box;
+  }
+  .home-logo {
+    width: 30vw;
+  }
+  .btn-signup, .btn-login {
+    font-size: 24px;
+  }
+  .home-container {
+    flex-direction: column;
+  }
+  .home-container-image {
+    width: 55vw;
+    height: auto;
+  }
+  .home-container-text h1 {
+    text-align: center;
+    font-size: 36px;
+  }
+  .home-container-text h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+/*Large devices (tablets landscape, desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  * {
+    box-sizing: border-box;
+  }
+}

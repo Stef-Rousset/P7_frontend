@@ -1,3 +1,9 @@
+.signup-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 65vh;
+}
 .signup-form {
   display: flex;
   flex-direction: column;
@@ -37,4 +43,58 @@
   border-width: 0;
   color: black;
   font-weight: bold;
+}
+
+/*responsive */
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (max-width: 767px) {
+  * {
+    box-sizing: border-box;
+  }
+  .signup-container {
+    height: 55vh;
+  }
+  .signup-container-text {
+    display: none;
+  }
+  .signup-form {
+    margin-right: 0px;
+    width: 90%;
+  }
+}
+/*Medium devices (tablets portrait, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+  * {
+    box-sizing: border-box;
+  }
+  .signup-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .signup-container-text h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+  .signup-container-text h2 {
+    font-size: 30px;
+    padding: 0 10px;
+    text-align: center;
+  }
+  .signup-form {
+    margin-right: 0px;
+    width: 70vw;
+  }
+}
+/*Large devices (tablets landscape, desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  * {
+    box-sizing: border-box;
+  }
+  .signup-container-text  {
+    margin-left: 10px;
+  }
+  .signup-form {
+    width: 40vw;
+  }
 }

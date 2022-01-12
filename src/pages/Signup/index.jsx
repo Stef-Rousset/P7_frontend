@@ -39,8 +39,8 @@ function Signup() {
   return (
     <div className="signup">
       < HeaderOne />
-      <div className="home-container">
-        <div className="home-container-text">
+      <div className="signup-container">
+        <div className="signup-container-text">
           <h1>BIENVENUE SUR GROUPBOOK</h1>
           <h2>Le réseau social qui rapproche les collaborateurs de Groupomania</h2>
         </div>
