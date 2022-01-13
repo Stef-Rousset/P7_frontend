@@ -67,6 +67,7 @@
 .post-top-right {
   font-style: italic;
   font-weight: 500;
+  text-align: end;
 }
 .post-text {
   height: 50%;
@@ -82,4 +83,62 @@
 .MuiPagination-root {
   align-self: center;
   margin-bottom: 5px;
+}
+
+/*responsive */
+
+/*Small devices (portrait phones, landscape phones, up to 767px)*/
+@media (max-width: 767px) {
+  * {
+    box-sizing: border-box;
+  }
+  .site-header h2, .posts-title {
+    display: none;
+  }
+  .posts-content {
+    margin: 20px 10px 10px 10px;
+    width: 70vw
+  }
+  .navbar {
+    margin: 20px 10px 40px 0px;
+    top: 20px;
+  }
+  .nav-logo {
+    display: none;
+  }
+  .btn-nav {
+    word-break: break-word;
+  }
+  .post-top-left .avatar {
+    display: none;
+  }
+  .post-top-right {
+    display: none;
+  }
+}
+/*Medium devices (tablets portrait, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+  * {
+    box-sizing: border-box;
+  }
+  .post-top-left .avatar {
+    display: none;
+  }
+  .post-title {
+    margin-left: 0;
+  }
+  .navbar {
+    height: 40vh;
+  }
+  .nav-container {
+    height: 100%;
+  }
+  .btn-nav {
+    font-size: 18px;
+    padding: 8px;
+    height: 20%;
+  }
+  .site-header h2 {
+    text-align: center;
+  }
 }

@@ -29,7 +29,7 @@
 
 /*responsive */
 
-/*Small devices (landscape phones, 576px and up)*/
+/*Small devices (portrait phones, landscape phones, up to 767px)*/
 @media (max-width: 767px) {
   * {
     box-sizing: border-box;
@@ -54,7 +54,10 @@
   .home-container-text {
     width: 90%;
   }
-  .home-container-text h1, h2 {
+  .home-container-text h1 {
+    text-align: center;
+  }
+  .home-container-text h2 {
     text-align: center;
   }
 }
