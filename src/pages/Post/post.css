@@ -13,6 +13,10 @@
 .post-top, .post-text {
   padding: 5px;
 }
+.post-text p {
+  overflow: scroll;
+  height: 100%;
+}
 .post-links {
   font-size: 16px;
   text-decoration: none;
@@ -51,3 +55,44 @@
   align-items: center;
 }
 
+/*responsive */
+
+/*Small devices (portrait phones, landscape phones, up to 767px)*/
+@media (max-width: 767px) {
+  * {
+    box-sizing: border-box;
+  }
+  .one-post {
+    margin: 20px 10px 0px 10px;
+    height: 88%;
+  }
+  .one-post > .post-top {
+    height: 17%;
+  }
+  .one-post h4 {
+    margin-block-start: 0.2em;
+  }
+  .one-post > .post-text {
+    height: 60%;
+  }
+  .one-post > .post-bottom {
+    flex-wrap: wrap;
+    padding: 0 5px;
+  }
+
+}
+/*Medium devices (tablets portrait, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+  * {
+    box-sizing: border-box;
+  }
+  .one-post > .post-top {
+    height: 17%;
+  }
+  .one-post > .post-text {
+    height: 65%;
+  }
+  .post-container > .navbar {
+    height: 45vh;
+  }
+}
