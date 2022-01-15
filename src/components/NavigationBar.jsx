@@ -47,7 +47,7 @@ function NavigationBar(){
         { window.location.pathname !== '/moderation' && user.role === 'admin' &&
           <Link to="/moderation" className="btn btn-nav"><p>Modération</p></Link>
         }
-        <Link to="/" className="btn btn-nav" onClick={ handleLogOut }>Se déconnecter</Link>
+        <Link to="/" className="btn btn-nav" onClick={ handleLogOut }><p>Se déconnecter</p></Link>
         </>
     }
     </div>

@@ -12,7 +12,7 @@
   margin-bottom: 10px;
 }
 .post-comments textarea {
-  height: 10vh;
+  height: 20vh;
 }
 .new-comment {
   display: flex;
@@ -52,6 +52,9 @@
   margin: 10px 0;
   background-color: #F5F5F5;
   padding:0 10px;
+}
+.one-comment p {
+  text-align: justify;
 }
 .comment-signal {
   display: flex;

@@ -97,4 +97,7 @@
   .one-post > .post-bottom {
     margin-top: 10px;
   }
+  .post-comments textarea {
+    height: 15vh;
+  }
 }
