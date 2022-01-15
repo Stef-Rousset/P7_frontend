@@ -33,17 +33,29 @@ input[name="title"]{
 }
 textarea[name="content"]{
   width: 98%;
-  margin-bottom: 25px;
-  height: 40%;
+  margin-bottom: 10px;
+  height: 60%;
 }
 .new-post-submit {
-  width: 30%;
+  width: auto;
   align-self: center;
   margin: 10px 0;
   background-color: #FFD7D7;
   border-width: 0;
   cursor: pointer;
   font-weight: bold;
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
+}
+
+/*responsive for the page and all its components*/
+
+/*Small devices (portrait phones, landscape phones, up to 767px)*/
+@media (max-width: 767px) {
+  * {
+    box-sizing: border-box;
+  }
+  .new-post-content {
+    margin: 20px 10px 30px 30px;
+  }
 }

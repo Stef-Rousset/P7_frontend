@@ -31,7 +31,7 @@
 .post-top {
   display: flex;
   justify-content: space-between;
-  height: 25%;
+  height: 30%;
 }
 .post-top-left {
   display: flex;
@@ -71,10 +71,9 @@
   text-align: end;
 }
 .post-text {
-  height: 50%;
-  display: flex;
-  align-items: center;
+  height: 45%;
   text-align: justify;
+  margin-top: 10px;
 }
 .avatar {
   border-radius: 50%;
@@ -86,7 +85,7 @@
   margin-bottom: 5px;
 }
 
-/*responsive */
+/*responsive for the page and all its components*/
 
 /*Small devices (portrait phones, landscape phones, up to 767px)*/
 @media (max-width: 767px) {
@@ -99,6 +98,15 @@
   .posts-content {
     margin: 20px 10px 10px 10px;
     width: 70vw
+  }
+  .post > .post-top {
+    height: 20%;
+  }
+  .post > .post-text {
+    height: 50%;
+  }
+  .post-more {
+    margin-top: 30px;
   }
   .navbar {
     margin: 20px 10px 40px 0px;
@@ -128,14 +136,18 @@
   .post-top-left .avatar {
     display: none;
   }
+  .post > .post-top {
+    height: 20%;
+  }
   .post-title {
     margin-left: 0;
   }
   .post > .post-text {
     margin-top: 20px;
+    height: 50%;
   }
   .navbar {
-    height: 40vh;
+    height: auto;
   }
   .nav-container {
     height: 100%;

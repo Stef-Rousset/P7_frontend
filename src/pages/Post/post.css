@@ -55,7 +55,7 @@
   align-items: center;
 }
 
-/*responsive */
+/*responsive for the page and all its components*/
 
 /*Small devices (portrait phones, landscape phones, up to 767px)*/
 @media (max-width: 767px) {
@@ -73,11 +73,13 @@
     margin-block-start: 0.2em;
   }
   .one-post > .post-text {
-    height: 60%;
+    height: 55%;
+    margin-top: 0px;
   }
   .one-post > .post-bottom {
     flex-wrap: wrap;
     padding: 0 5px;
+    margin-top: 5px;
   }
 
 }
@@ -92,7 +94,7 @@
   .one-post > .post-text {
     height: 65%;
   }
-  .post-container > .navbar {
-    height: 45vh;
+  .one-post > .post-bottom {
+    margin-top: 10px;
   }
 }
