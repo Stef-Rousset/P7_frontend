@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import './index.css';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -17,7 +17,7 @@ import Footer from './components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
@@ -30,7 +30,7 @@ ReactDOM.render(
         <Route path="/moderation" element={<Moderation />} />
         <Route path="*" element={<HandleErrorNavigation />} />
       </Routes>
-    </HashRouter>
+    </Router>
     < Footer />
   </React.StrictMode>,
   document.getElementById('root')
