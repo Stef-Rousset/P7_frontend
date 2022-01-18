@@ -12,7 +12,7 @@ function Home() {
           <h1>BIENVENUE SUR GROUPBOOK</h1>
           <h2>Le réseau social qui rapproche les collaborateurs de Groupomania</h2>
         </div>
-        <img src={ homeImg } className="home-container-image" alt="image d'accueil" />
+        <img src={ homeImg } className="home-container-image" alt="échanger en réseau" />
       </section>
     </div>
   );

@@ -39,13 +39,13 @@ function Post(){
     return(
           <div className="post-alone">
           < HeaderTwo />
-          <div className="post-container">
-             {post && <div className="one-post">
+          <div className="post-container" role="main">
+             {post && <section className="one-post">
                           <div className="post-top">
                             <div className="post-top-left">
-                              <img src={ post.User.imageUrl } className='avatar' alt="avatar"  />
+                              <img src={ post.User.imageUrl } className='avatar' alt={ post.User.lastName }  />
                               <div className="post-title">
-                                <h4>{post.title}</h4>
+                                <h3>{post.title}</h3>
                                 <p>{count} likes</p>
                               </div>
                             </div>
@@ -76,11 +76,11 @@ function Post(){
                            <div className="comments show-comments">
                            <Comments post={post}/>
                           </div>
-                      </div>
+                      </section>
               }
-              <div className="navbar">
+              <nav className="navbar">
                  < NavigationBar />
-              </div>
+              </nav>
           </div>
       </div>
     );

@@ -13,6 +13,9 @@
 .post-top, .post-text {
   padding: 5px;
 }
+.one-post h3 {
+  font-size: 16px;
+}
 .post-text p {
   overflow: scroll;
   height: 100%;
@@ -69,7 +72,7 @@
   .one-post > .post-top {
     height: 17%;
   }
-  .one-post h4 {
+  .one-post h3 {
     margin-block-start: 0.2em;
   }
   .one-post > .post-text {
@@ -90,6 +93,9 @@
   }
   .one-post > .post-top {
     height: 17%;
+  }
+  .one-post h3 {
+    font-size: 20px;
   }
   .one-post > .post-text {
     height: 65%;

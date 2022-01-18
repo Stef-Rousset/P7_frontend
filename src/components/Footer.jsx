@@ -9,9 +9,9 @@ function Footer(){
         <footer className="footer-container">
           <img src={ logoLeft } className="footer-container-logo" alt="logo groupomania" />
           <div className="footer-container-networks">
-            <a href="#"><img src={ facebook } className="footer-container-image" alt="logo facebook" /></a>
-            <a href="#"><img src={ instagram } className="footer-container-image" alt="logo instagram" /></a>
-            <a href="#"><img src={ twitter } className="footer-container-image" alt="logo twitter" /></a>
+            <a href="https://fr-fr.facebook.com/groupomania/"><img src={ facebook } className="footer-container-image" alt="logo facebook" /></a>
+            <a href="https://www.instagram.com/groupomania/?hl=fr"><img src={ instagram } className="footer-container-image" alt="logo instagram" /></a>
+            <a href="https://twitter.com/groupomania"><img src={ twitter } className="footer-container-image" alt="logo twitter" /></a>
           </div>
         </footer>
     )
