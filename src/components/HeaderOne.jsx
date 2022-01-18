@@ -5,7 +5,7 @@ import '../styles/HeaderOne.css';
 function HeaderOne(){
   return(
       <header className="home-header">
-        <img src={ logoAbove } className="home-logo" alt="logo" />
+        <img src={ logoAbove } className="home-logo" alt="logo de Groupomania" />
         <div className="home-btns">
           <Link to="/signup" className="btn btn-signup">SIGNUP</Link>
           <Link to="/login" className="btn btn-login">LOGIN</Link>
