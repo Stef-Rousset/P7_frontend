@@ -17,7 +17,7 @@ import Footer from './components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
@@ -30,7 +30,7 @@ ReactDOM.render(
         <Route path="/moderation" element={<Moderation />} />
         <Route path="*" element={<HandleErrorNavigation />} />
       </Routes>
-    </Router>
+    </HashRouter>
     < Footer />
   </React.StrictMode>,
   document.getElementById('root')
