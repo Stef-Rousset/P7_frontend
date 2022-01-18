@@ -1,0 +1,69 @@
+.moderation-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #E5E1E1;
+  height: 70vh;
+  overflow: scroll;
+}
+.moderation-dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: fit-content;
+  margin:  40px 40px 40px 80px;
+}
+.moderation-dashboard h3 {
+  text-align: center;
+}
+.moderation-dashboard-posts, .moderation-dashboard-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.moderation-dashboard-posts {
+  margin-bottom: 15px;
+}
+
+/*responsive for the page and all its components*/
+
+/*Small devices (portrait phones, landscape phones, up to 767px)*/
+@media (max-width: 767px) {
+  * {
+    box-sizing: border-box;
+  }
+  .moderation-dashboard {
+    margin: 20px 20px 30px 20px;
+    width: 70%;
+  }
+  .signalment-infos {
+    margin: 5px 5px 10px 5px;
+    padding: 5px;
+  }
+  .signalment-title {
+    margin-block-end: 0.5em;
+    font-size: 16px;
+  }
+  .signalment-content {
+    font-size: 16px;
+  }
+  .signalment-button {
+    width: auto;
+  }
+}
+/*Medium devices (tablets portrait, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+  * {
+    box-sizing: border-box;
+  }
+  .moderation-dashboard {
+    margin: 40px;
+    width: 65%;
+  }
+  .signalment-title, .signalment-content {
+    font-size: 18px;
+  }
+  .signalment-button {
+    font-size: 16px;
+  }
+}

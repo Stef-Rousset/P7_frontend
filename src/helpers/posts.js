@@ -8,9 +8,9 @@ export const handlePostSignalment = (id) => {
                 },
       body: JSON.stringify({ id: `${id}` })
     }
-    fetch(`http://localhost:8080/api/posts/post_signalments/new`, requestOptions)
+    fetch(`http://localhost:8080/api/post_signalments/new`, requestOptions)
     .then(response => {
-        alert('Post signalment added')
+        alert('Post\'s signalment added')
         return null;
     })
     .catch(function(error){
@@ -30,14 +30,8 @@ export const addLikeToPost = (id) => {
     }
     fetch('http://localhost:8080/api/posts/like', requestOptions)
     .then(response => {
-        if (response.status === 201){
-            alert('Like added to post')
-            window.location.reload()
-        } else if (response.status === 200 ){
-            alert('Like status modified')
-            window.location.reload()
-        } else if (response.status === 401){
-            alert('You cannot like or dislike your own post')
+         if (response.status === 401){
+            alert('You cannot interact with likes of your own post')
         }
         return null;
     })
@@ -56,16 +50,11 @@ export const addDislikeToPost = (id) => {
                 },
       body: JSON.stringify({ postId: `${id}`, status: 'dislike' })
     }
+
     fetch('http://localhost:8080/api/posts/like', requestOptions)
     .then(response => {
-        if (response.status === 201){
-            alert('Dislike added to post')
-            window.location.reload()
-        } else if (response.status === 200 ){
-            alert('Like status modified')
-            window.location.reload()
-        } else if (response.status === 401){
-            alert('You cannot like or dislike your own post')
+        if (response.status === 401){
+            alert('You cannot interact with likes of your own post')
         }
         return null;
     })
@@ -85,7 +74,8 @@ export const handleSuppressPost = (id) => {
     }
     fetch(`http://localhost:8080/api/posts/delete/${id}`, requestOptions)
     .then(response => {
-        alert('post deleted')
+        alert('Post deleted')
+        window.location.reload()
         return null;
     })
     .catch(function(error){
@@ -110,7 +100,7 @@ export const handleCommentSignalment = (id) => {
     }
     fetch(`http://localhost:8080/api/comment_signalments/new`, requestOptions)
     .then(response => {
-        alert('Comment signalment added')
+        alert('Comment\'s signalment added')
         return null;
     })
     .catch(function(error){
@@ -119,4 +109,61 @@ export const handleCommentSignalment = (id) => {
     });
 }
 
+export const handleSupressPostSignalment = (id) => {
+    const requestOptions = {
+        method: "DELETE",
+        headers: {  'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                  }
+    }
+    fetch(`http://localhost:8080/api/post_signalments/${id}`, requestOptions)
+    .then(response => {
+        alert('Post\'s signalments deleted')
+        window.location.reload()
+        return null;
+    })
+    .catch(function(error){
+        alert(error);
+        return null;
+    });
+}
 
+export const handleSupressCommentSignalment = (id) => {
+    const requestOptions = {
+        method: "DELETE",
+        headers: {  'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                  }
+    }
+    fetch(`http://localhost:8080/api/comment_signalments/${id}`, requestOptions)
+    .then(response => {
+        alert('Comment\'s signalments deleted')
+        window.location.reload()
+        return null;
+    })
+    .catch(function(error){
+        alert(error);
+        return null;
+    });
+}
+export const handleSuppressComment = (id) => {
+    const requestOptions = {
+      method: "DELETE",
+      headers: {  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+    }
+    fetch(`http://localhost:8080/api/posts/comment/${id}`, requestOptions)
+    .then(response => {
+        alert('Comment deleted')
+        window.location.reload()
+        return null;
+    })
+    .catch(function(error){
+        alert(error);
+        return null;
+    });
+}

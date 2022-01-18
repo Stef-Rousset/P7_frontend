@@ -3,8 +3,7 @@ import NavigationBar from '../../components/NavigationBar';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Pagination from '@material-ui/lab/Pagination';
-import '../../styles/Posts.css';
-
+import './posts.css';
 
 function Posts(){
     const userId = parseInt(localStorage.getItem('id'));

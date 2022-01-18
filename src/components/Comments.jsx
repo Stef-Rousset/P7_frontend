@@ -37,14 +37,14 @@ function Comments(props){
           <form className="new-comment-form" onSubmit={ handleSubmit(onSubmit) }>
             <label htmlFor="comment-content">Contenu</label>
             <textarea name="comment-content" id="comment-content" placeholder="votre texte" { ...register("comment-content")} />
-            <input type="submit" />
+            <input className="new-comment-submit" type="submit" />
           </form>
         </div>
         <div className="old-comments">
           { props.post.Comments.map(comment => (
               <div key={ comment.id } className="one-comment">
-                <h5>Commentaire de { comment.User.firstName } { comment.User.lastName }</h5>
-                <h6>du { new Date(comment.createdAt).toLocaleDateString() }</h6>
+                <h5>Ajouté par { comment.User.firstName } { comment.User.lastName }</h5>
+                <h6>le { new Date(comment.createdAt).toLocaleDateString() }</h6>
                 <p>{ comment.content }</p>
                 <div className="comment-signal" onClick={() => { handleCommentSignalment(comment.id) }}>
                   <p className="post-links" >Signaler</p><FontAwesomeIcon icon={ faExclamationCircle } className="icon-links"/>

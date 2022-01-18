@@ -2,7 +2,7 @@ import HeaderTwo from '../../components/HeaderTwo';
 import NavigationBar from '../../components/NavigationBar';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/NewPost.css';
+import './newPost.css';
 
 
 function NewPost(){
@@ -44,7 +44,7 @@ function NewPost(){
                   <input type="text" name="title" id="title" placeholder="mon titre" { ...register("title")} />
                   <label htmlFor="content">Contenu du post</label>
                   <textarea name="content" id="content" placeholder="mon texte" { ...register("content")} />
-                  <input type="submit" />
+                  <input className="new-post-submit" type="submit" />
                 </form>
               </div>
               <div className="navbar">

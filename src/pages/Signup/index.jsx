@@ -1,7 +1,7 @@
 import HeaderOne from '../../components/HeaderOne';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/Signup.css';
+import './signup.css';
 
 function Signup() {
   let navigate = useNavigate();
@@ -13,10 +13,10 @@ function Signup() {
                           'Content-Type': 'application/json'
               },
               body: JSON.stringify(
-                                    { firstName: document.getElementById('firstName').value,
-                                      lastName: document.getElementById('lastName').value,
-                                      email: document.getElementById('email').value,
-                                      password: document.getElementById('password').value,
+                                    { firstName: data.firstName,
+                                      lastName: data.lastName,
+                                      email: data.email,
+                                      password: data.password,
                                     }
                                   )
           })
@@ -39,8 +39,8 @@ function Signup() {
   return (
     <div className="signup">
       < HeaderOne />
-      <div className="home-container">
-        <div className="home-container-text">
+      <div className="signup-container">
+        <div className="signup-container-text">
           <h1>BIENVENUE SUR GROUPBOOK</h1>
           <h2>Le réseau social qui rapproche les collaborateurs de Groupomania</h2>
         </div>

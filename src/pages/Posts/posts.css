@@ -1,0 +1,163 @@
+.posts-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #E5E1E1;
+  height: 70vh;
+  overflow: scroll;
+}
+.posts-content {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  width: 65vw;
+}
+.posts-title {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  background-color: white;
+}
+.posts-all {
+  display: flex;
+  flex-direction: column;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+.post-top {
+  display: flex;
+  justify-content: space-between;
+  height: 30%;
+}
+.post-top-left {
+  display: flex;
+  justify-content: space-between;
+}
+.post-title {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.post-title > h4 {
+  margin-block-start: 1em;
+  margin-block-end: 0.5em;
+  text-align: start;
+}
+.post-title > p {
+  margin-block-start: 0;
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 14px;
+}
+.post-more {
+  align-self: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.post-more:hover {
+  opacity: 0.8;
+  transform: scale(1.025);
+  cursor: pointer;
+}
+.post-top-right {
+  font-style: italic;
+  font-weight: 500;
+  text-align: end;
+}
+.post-text {
+  height: 45%;
+  text-align: justify;
+  margin-top: 10px;
+}
+.avatar {
+  border-radius: 50%;
+  height: 50px;
+  box-shadow: 2px 2px 2px #E5E1E1;
+}
+.MuiPagination-root {
+  align-self: center;
+  margin-bottom: 5px;
+}
+
+/*responsive for the page and all its components*/
+
+/*Small devices (portrait phones, landscape phones, up to 767px)*/
+@media (max-width: 767px) {
+  * {
+    box-sizing: border-box;
+  }
+  .site-header h2, .posts-title {
+    display: none;
+  }
+  .posts-content {
+    margin: 20px 10px 10px 10px;
+    width: 70vw
+  }
+  .post > .post-top {
+    height: 20%;
+  }
+  .post > .post-text {
+    height: 50%;
+  }
+  .post-more {
+    margin-top: 30px;
+  }
+  .navbar {
+    margin: 20px 10px 40px 0px;
+    top: 20px;
+  }
+  .nav-logo {
+    display: none;
+  }
+  .btn-nav {
+    word-break: break-word;
+  }
+  .post-top-left .avatar {
+    display: none;
+  }
+  .post-top-right {
+    display: none;
+  }
+  .post-title {
+    margin-left: 0;
+  }
+}
+/*Medium devices (tablets portrait, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+  * {
+    box-sizing: border-box;
+  }
+  .post-top-left .avatar {
+    display: none;
+  }
+  .post > .post-top {
+    height: 20%;
+  }
+  .post-title {
+    margin-left: 0;
+  }
+  .post > .post-text {
+    margin-top: 20px;
+    height: 50%;
+  }
+  .navbar {
+    height: auto;
+  }
+  .nav-container {
+    height: 100%;
+  }
+  .btn-nav {
+    font-size: 18px;
+    padding: 8px;
+    height: 20%;
+  }
+  .site-header h2 {
+    text-align: center;
+  }
+}

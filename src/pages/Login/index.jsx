@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Login() {
   let navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onBlur' });
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({ mode: 'onBlur' });
   const onSubmit = data => {
       fetch("http://localhost:8080/api/users/login", {
               method: "POST",
@@ -28,7 +28,9 @@ function Login() {
                 return null;
           })
           .catch(function(error){
-              alert(error);
+              console.log(error);
+              alert("Wrong email or password. Please try again");
+              reset(); // vider les inputs du form
               return null;
           });
   };
@@ -36,10 +38,10 @@ function Login() {
   return (
     <div className="login">
       < HeaderOne />
-      <div className="home-container">
-        <div className="home-container-text">
+      <div className="signup-container">
+        <div className="signup-container-text">
           <h1>BIENVENUE SUR GROUPBOOK</h1>
-          <h3>Le réseau social qui rapproche les collaborateurs de Groupomania</h3>
+          <h2>Le réseau social qui rapproche les collaborateurs de Groupomania</h2>
         </div>
         <form className="signup-form" onSubmit={handleSubmit(onSubmit)}>
         <h3>Connexion</h3>

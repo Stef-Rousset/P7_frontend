@@ -4,7 +4,7 @@ import Comments from '../../components/Comments';
 import { handlePostSignalment, addLikeToPost, addDislikeToPost, handleComments, handleSuppressPost } from '../../helpers/posts';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
-import '../../styles/Post.css';
+import './post.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments, faThumbsUp, faThumbsDown, faTimes, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -56,9 +56,9 @@ function Post(){
                           </div>
                           <div className='post-bottom'>
                             <div className="post-bottom-like">
-                               <FontAwesomeIcon icon={ faThumbsUp } className="icon-links" onClick={() => { addLikeToPost(post.id); setCount(count + 1) }} />
+                               <FontAwesomeIcon icon={ faThumbsUp } className="icon-links" onClick={() => { addLikeToPost(post.id); post.userId === parseInt(localStorage.getItem('id')) ? setCount(count) : setCount(count + 1) }} />
                                <p>Like</p>
-                               <FontAwesomeIcon icon={ faThumbsDown } className="icon-links" onClick={() => { addDislikeToPost(post.id); setCount(count - 1) }} />
+                               <FontAwesomeIcon icon={ faThumbsDown } className="icon-links" onClick={() => { addDislikeToPost(post.id); count > 0 && post.userId !== parseInt(localStorage.getItem('id')) ? setCount(count - 1) : setCount(count) }} />
                             </div>
                             <div className="post-bottom-comment" onClick={() => { handleComments() }}>
                               <p className="post-links">Commentaires</p><FontAwesomeIcon icon={ faComments } className="icon-links" />
@@ -76,7 +76,7 @@ function Post(){
                            <div className="comments show-comments">
                            <Comments post={post}/>
                           </div>
-                        </div>
+                      </div>
               }
               <div className="navbar">
                  < NavigationBar />

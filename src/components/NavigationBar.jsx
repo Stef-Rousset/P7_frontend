@@ -33,21 +33,21 @@ function NavigationBar(){
     {user && <>
         <img src={ navImage } className="nav-logo" alt="call" />
         { window.location.pathname !== '/posts' &&
-           <Link to="/posts" className="btn btn-nav">Liste des posts</Link>
+           <Link to="/posts" className="btn btn-nav"><p>Liste des posts</p></Link>
         }
         { window.location.pathname !== '/new_post' &&
-          <Link to="/new_post" className="btn btn-nav">Ajouter un post</Link>
+          <Link to="/new_post" className="btn btn-nav"><p>Ajouter un post</p></Link>
         }
         { window.location.pathname !== "/my_posts" &&
-          <Link to="/my_posts" className="btn btn-nav" > Voir mes posts</Link>
+          <Link to="/my_posts" className="btn btn-nav" ><p>Voir mes posts</p></Link>
         }
         { window.location.pathname !== '/profile' &&
-          <Link to="/profile" className="btn btn-nav">Voir mon profil</Link>
+          <Link to="/profile" className="btn btn-nav"><p>Voir mon profil</p></Link>
         }
         { window.location.pathname !== '/moderation' && user.role === 'admin' &&
-          <Link to="/moderation" className="btn btn-nav">Modération</Link>
+          <Link to="/moderation" className="btn btn-nav"><p>Modération</p></Link>
         }
-        <Link to="/" className="btn btn-nav" onClick={ handleLogOut }>Se déconnecter</Link>
+        <Link to="/" className="btn btn-nav" onClick={ handleLogOut }><p>Se déconnecter</p></Link>
         </>
     }
     </div>

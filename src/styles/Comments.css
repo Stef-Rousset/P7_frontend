@@ -12,19 +12,29 @@
   margin-bottom: 10px;
 }
 .post-comments textarea {
-  height: 10vh;
+  height: 20vh;
 }
 .new-comment {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
   margin-bottom: 10px;
-  background-color: #E5E1E1;
+  background-color: #F5F5F5;
   padding:0 10px;
 }
 .new-comment-form {
   display: flex;
   flex-direction: column;
+}
+.new-comment-submit {
+  width: 30%;
+  align-self: center;
+  margin: 10px 0;
+  background-color: #FFD7D7;
+  border-width: 0;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
 }
 .old-comments {
   display: flex;
@@ -40,8 +50,11 @@
   display: flex;
   flex-direction: column;
   margin: 10px 0;
-  background-color: #E5E1E1;
+  background-color: #F5F5F5;
   padding:0 10px;
+}
+.one-comment p {
+  text-align: justify;
 }
 .comment-signal {
   display: flex;
