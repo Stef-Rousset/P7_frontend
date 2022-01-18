@@ -8,7 +8,7 @@ export const handlePostSignalment = (id) => {
                 },
       body: JSON.stringify({ id: `${id}` })
     }
-    fetch(`http://localhost:8080/api/posts/post_signalments/new`, requestOptions)
+    fetch(`http://localhost:8080/api/post_signalments/new`, requestOptions)
     .then(response => {
         alert('Post\'s signalment added')
         return null;
@@ -30,14 +30,8 @@ export const addLikeToPost = (id) => {
     }
     fetch('http://localhost:8080/api/posts/like', requestOptions)
     .then(response => {
-        if (response.status === 201){
-            alert('Like added to post')
-            window.location.reload()
-        } else if (response.status === 200 ){
-            alert('Like status modified')
-            window.location.reload()
-        } else if (response.status === 401){
-            alert('You cannot like or dislike your own post')
+         if (response.status === 401){
+            alert('You cannot interact with likes of your own post')
         }
         return null;
     })
@@ -56,16 +50,11 @@ export const addDislikeToPost = (id) => {
                 },
       body: JSON.stringify({ postId: `${id}`, status: 'dislike' })
     }
+
     fetch('http://localhost:8080/api/posts/like', requestOptions)
     .then(response => {
-        if (response.status === 201){
-            alert('Dislike added to post')
-            window.location.reload()
-        } else if (response.status === 200 ){
-            alert('Like status modified')
-            window.location.reload()
-        } else if (response.status === 401){
-            alert('You cannot like or dislike your own post')
+        if (response.status === 401){
+            alert('You cannot interact with likes of your own post')
         }
         return null;
     })

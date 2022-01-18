@@ -146,7 +146,7 @@ function Profile(){
                           { errors.imageUrl && <p className="errors">Seules sont autorisées les extensions .jpg, .png et .jpeg</p>}
                         </div>
                         <div className="profile-form-buttons">
-                          <input type="submit" className="profile-form-button" />
+                          <input type="submit" className="profile-form-button" onClick={ handleProfile }/>
                           <a href="#" className="profile-form-button" onClick={ handleProfile } >Annuler</a>
                         </div>
                       </form>

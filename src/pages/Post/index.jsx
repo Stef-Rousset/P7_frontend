@@ -56,9 +56,9 @@ function Post(){
                           </div>
                           <div className='post-bottom'>
                             <div className="post-bottom-like">
-                               <FontAwesomeIcon icon={ faThumbsUp } className="icon-links" onClick={() => { addLikeToPost(post.id); setCount(count + 1) }} />
+                               <FontAwesomeIcon icon={ faThumbsUp } className="icon-links" onClick={() => { addLikeToPost(post.id); post.userId === parseInt(localStorage.getItem('id')) ? setCount(count) : setCount(count + 1) }} />
                                <p>Like</p>
-                               <FontAwesomeIcon icon={ faThumbsDown } className="icon-links" onClick={() => { addDislikeToPost(post.id); setCount(count - 1) }} />
+                               <FontAwesomeIcon icon={ faThumbsDown } className="icon-links" onClick={() => { addDislikeToPost(post.id); count > 0 && post.userId !== parseInt(localStorage.getItem('id')) ? setCount(count - 1) : setCount(count) }} />
                             </div>
                             <div className="post-bottom-comment" onClick={() => { handleComments() }}>
                               <p className="post-links">Commentaires</p><FontAwesomeIcon icon={ faComments } className="icon-links" />

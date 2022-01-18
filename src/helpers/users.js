@@ -22,7 +22,6 @@ export const handleProfile = () => {
   }
   profileForm.classList.toggle('hide-profile-element')
   profileDiv.classList.toggle('hide-profile-element')
-
 }
 
 export const handleDeleteProfile = () => {
@@ -55,6 +54,7 @@ export const handleAvatar = (event) => {
   avatarDiv.classList.toggle('hide-profile-element');
 }
 export const deleteErrors = () => {
+  // s'il y avait des messages d'erreur dans le form, on les supprime
   const errors = document.querySelectorAll('.errors');
   errors.forEach(error => error.remove())
 }

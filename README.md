@@ -1,5 +1,24 @@
-# Getting Started with Create React App
+# Groupomania #
+This is the frontend code for Project 7 of the Junior Web Developer path.
+The purpose is to build an intern social network for Groupomania employees.
+The user will be able to:
+- see all posts,
+- see or delete his own posts,
+- add one post,
+- like or dislike others posts,
+- add comments to a post,
+- signaled unappropriate posts or comments,
+- see, update and delete his account.
 
+The admin will be able to perform specific actons:
+- see all signaled posts and comments,
+- delete a signaled post or a signaled comment.
+
+
+### Installation ###
+Clone this repo.
+Then, from within the project folder, run `npm install` to install all dependencies
+needed.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

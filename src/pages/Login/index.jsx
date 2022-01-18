@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Login() {
   let navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onBlur' });
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({ mode: 'onBlur' });
   const onSubmit = data => {
       fetch("http://localhost:8080/api/users/login", {
               method: "POST",
@@ -28,7 +28,9 @@ function Login() {
                 return null;
           })
           .catch(function(error){
-              alert(error);
+              console.log(error);
+              alert("Wrong email or password. Please try again");
+              reset(); // vider les inputs du form
               return null;
           });
   };
