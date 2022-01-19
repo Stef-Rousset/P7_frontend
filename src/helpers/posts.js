@@ -136,6 +136,7 @@ export const handleSupressPostSignalment = (id) => {
     }
     fetch(`http://localhost:8080/api/post_signalments/${id}`, requestOptions)
     .then(response => {
+        window.location.reload()
         alert('Post\'s signalments deleted')
         return null;
     })
