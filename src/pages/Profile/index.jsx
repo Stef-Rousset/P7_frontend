@@ -84,9 +84,9 @@ function Profile(){
     return(
         <div className="profile-page">
           < HeaderTwo />
-          <div className="profile-container">
+          <div className="profile-container" role="main">
               {user && <>
-                      <div className="profile-infos">
+                      <section className="profile-infos">
                         <div className="profile-top">
                           <img src={ user.imageUrl } className="profile-avatar" alt="avatar" />
                           <h3>Mes informations</h3>
@@ -113,7 +113,7 @@ function Profile(){
                           Supprimer mon compte
                           </div>
                         </div>
-                      </div>
+                      </section>
                       <form className="profile-form hide-profile-element" onSubmit={ handleSubmit(onSubmit) }>
                         <h3>Modifier vos informations</h3>
                         <div className="profile-form-infos">
@@ -146,15 +146,15 @@ function Profile(){
                           { errors.imageUrl && <p className="errors">Seules sont autorisées les extensions .jpg, .png et .jpeg</p>}
                         </div>
                         <div className="profile-form-buttons">
-                          <input type="submit" className="profile-form-button" onClick={ handleProfile }/>
+                          <input type="submit" className="profile-form-button" value="Envoyer" onClick={ handleProfile }/>
                           <a href="#" className="profile-form-button" onClick={ handleProfile } >Annuler</a>
                         </div>
                       </form>
                       </>
               }
-              <div className="navbar">
+              <nav className="navbar">
                  < NavigationBar />
-              </div>
+              </nav>
           </div>
         </div>
       )

@@ -59,8 +59,8 @@ function Posts(){
     return (
         <div className="posts">
           < HeaderTwo />
-          <div className="posts-container">
-            <div className="posts-content">
+          <div className="posts-container" role="main">
+            <section className="posts-content">
               <div className="posts-title">
                 <h3> Liste des Posts</h3>
               </div>
@@ -70,7 +70,7 @@ function Posts(){
                               <div key={post.id} className="post">
                                   <div className="post-top">
                                     <div className="post-top-left">
-                                      <img src={ post.User.imageUrl } className='avatar' alt="avatar"  />
+                                      <img src={ post.User.imageUrl } className='avatar' alt={ post.User.lastName }  />
                                       <div className="post-title">
                                         <h4>{post.title}</h4>
                                       </div>
@@ -113,10 +113,10 @@ function Posts(){
                 }
                 <Pagination count={5} page={page} onChange={handleChange} />
               </div>
-            </div>
-            <div className="navbar">
+            </section>
+            <nav className="navbar">
                 < NavigationBar />
-            </div>
+            </nav>
           </div>
         </div>
     );

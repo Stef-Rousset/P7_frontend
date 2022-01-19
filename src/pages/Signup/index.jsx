@@ -31,15 +31,16 @@ function Signup() {
               return null;
           })
           .catch(function(error){
-              alert(error);
+              alert("An error occured, please try again");
+              console.log(error);
               return null;
           });
   };
 
   return (
-    <div className="signup">
+    <div className="signup" role="main">
       < HeaderOne />
-      <div className="signup-container">
+      <section className="signup-container">
         <div className="signup-container-text">
           <h1>BIENVENUE SUR GROUPBOOK</h1>
           <h2>Le réseau social qui rapproche les collaborateurs de Groupomania</h2>
@@ -68,7 +69,7 @@ function Signup() {
           { errors.password && <p>Un password de 6 à 30 caratères comprenant une minuscule, une majuscule, un chiffre et sans espace est requis</p>}
           <input type="submit" />
         </form >
-      </div>
+      </section>
     </div>
   );
 }

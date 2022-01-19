@@ -7,10 +7,10 @@ function HandleErrorNavigation() {
   return(
       <div>
         < HeaderOne />
-        <div className="error-container">
+        <section className="error-container" role="main">
           <h1>La page demandée n'existe pas...</h1>
           <button className="btn btn-signup" onClick={() => navigate(-1)}>Back to previous page</button>
-        </div>
+        </section>
       </div>
     )
 }

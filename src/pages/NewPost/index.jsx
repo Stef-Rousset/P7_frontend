@@ -36,20 +36,20 @@ function NewPost(){
     return(
           <div className="new-post">
             < HeaderTwo />
-            <div className="new-post-container">
-              <div className="new-post-content">
+            <div className="new-post-container" role="main">
+              <section className="new-post-content">
                 <h3> Nouveau post</h3>
                 <form className="new-post-form" onSubmit={ handleSubmit(onSubmit) }>
                   <label htmlFor="title">Titre du post</label>
                   <input type="text" name="title" id="title" placeholder="mon titre" { ...register("title")} />
                   <label htmlFor="content">Contenu du post</label>
                   <textarea name="content" id="content" placeholder="mon texte" { ...register("content")} />
-                  <input className="new-post-submit" type="submit" />
+                  <input className="new-post-submit" type="submit" value="Envoyer" />
                 </form>
-              </div>
-              <div className="navbar">
+              </section>
+              <nav className="navbar">
                 < NavigationBar />
-              </div>
+              </nav>
             </div>
           </div>)
 }
