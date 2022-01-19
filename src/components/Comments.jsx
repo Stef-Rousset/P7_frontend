@@ -33,7 +33,7 @@ function Comments(props){
     return (
       <div className="post-comments">
         <div className="new-comment">
-          <h5>Votre commentaire</h5>
+          <h4>Votre commentaire</h4>
           <form className="new-comment-form" onSubmit={ handleSubmit(onSubmit) }>
             <label htmlFor="comment-content">Contenu</label>
             <textarea name="comment-content" id="comment-content" placeholder="votre texte" { ...register("comment-content")} />

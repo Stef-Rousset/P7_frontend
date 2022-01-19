@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Login() {
   let navigate = useNavigate();
-  const { register, handleSubmit, formState, reset } = useForm({ mode: 'onBlur' });
+  const { register, handleSubmit, reset } = useForm({ mode: 'onBlur' });
   const onSubmit = data => {
       fetch("http://localhost:8080/api/users/login", {
               method: "POST",
@@ -20,7 +20,7 @@ function Login() {
           })
           .then(response => response.json())
           .then(data => {
-                  // stocker dans le localStorage les infos nécessaires, et rediriger sur la page des posts
+                // stocker dans le localStorage les infos nécessaires, et rediriger sur la page des posts
                 localStorage.setItem('token', data.token)
                 localStorage.setItem('img', data.user.imageUrl)
                 localStorage.setItem('id', data.user.id)
@@ -30,7 +30,8 @@ function Login() {
           .catch(function(error){
               console.log(error);
               alert("Wrong email or password. Please try again");
-              reset(); // vider les inputs du form
+              // vider les inputs du form
+              reset();
               return null;
           });
   };

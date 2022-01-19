@@ -7,7 +7,7 @@ import '../styles/Footer.css';
 function Footer(){
   return(
         <footer className="footer-container">
-          <img src={ logoLeft } className="footer-container-logo" alt="logo groupomania" />
+          <a href="https://www.groupomania.fr"><img src={ logoLeft } className="footer-container-logo" alt="logo groupomania" /></a>
           <div className="footer-container-networks">
             <a href="https://fr-fr.facebook.com/groupomania/"><img src={ facebook } className="footer-container-image" alt="logo facebook" /></a>
             <a href="https://www.instagram.com/groupomania/?hl=fr"><img src={ instagram } className="footer-container-image" alt="logo instagram" /></a>

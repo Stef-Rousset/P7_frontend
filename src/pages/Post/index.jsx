@@ -1,7 +1,7 @@
 import HeaderTwo from '../../components/HeaderTwo';
 import NavigationBar from '../../components/NavigationBar';
 import Comments from '../../components/Comments';
-import { handlePostSignalment, addLikeToPost, addDislikeToPost, handleComments, handleSuppressPost } from '../../helpers/posts';
+import { handlePostSignalment, addLikeToPost, removeLikeOfPost, handleComments, handleSuppressPost } from '../../helpers/posts';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import './post.css';
@@ -46,7 +46,7 @@ function Post(){
                               <img src={ post.User.imageUrl } className='avatar' alt={ post.User.lastName }  />
                               <div className="post-title">
                                 <h3>{post.title}</h3>
-                                <p>{count} likes</p>
+                                { count > 1 ? <p>{count} likes</p> : <p>{count} like</p> }
                               </div>
                             </div>
                             <p className="post-top-right">publié par { post.User.firstName } { post.User.lastName } le { new Date(post.createdAt).toLocaleDateString() }</p>
@@ -58,7 +58,7 @@ function Post(){
                             <div className="post-bottom-like">
                                <FontAwesomeIcon icon={ faThumbsUp } className="icon-links" onClick={() => { addLikeToPost(post.id); post.userId === parseInt(localStorage.getItem('id')) ? setCount(count) : setCount(count + 1) }} />
                                <p>Like</p>
-                               <FontAwesomeIcon icon={ faThumbsDown } className="icon-links" onClick={() => { addDislikeToPost(post.id); count > 0 && post.userId !== parseInt(localStorage.getItem('id')) ? setCount(count - 1) : setCount(count) }} />
+                               <FontAwesomeIcon icon={ faThumbsDown } className="icon-links" onClick={() => { removeLikeOfPost(post.id); count > 0 && post.userId !== parseInt(localStorage.getItem('id')) ? setCount(count - 1) : setCount(count) }} />
                             </div>
                             <div className="post-bottom-comment" onClick={() => { handleComments() }}>
                               <p className="post-links">Commentaires</p><FontAwesomeIcon icon={ faComments } className="icon-links" />

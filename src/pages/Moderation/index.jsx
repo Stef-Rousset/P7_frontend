@@ -50,8 +50,8 @@ function Moderation(){
     return (
             <div className="moderation-page">
               <HeaderTwo />
-              <div className="moderation-container">
-                <div className="moderation-dashboard">
+              <div className="moderation-container" role="main">
+                <section className="moderation-dashboard">
                   <div className="moderation-dashboard-posts">
                     <h3>Posts signalés</h3>
                     { postSignalments && postSignalments.map(signalment => (
@@ -66,10 +66,10 @@ function Moderation(){
                     ))
                     }
                   </div>
-                </div>
-                <div className="navbar">
+                </section>
+                <nav className="navbar">
                   < NavigationBar />
-                </div>
+                </nav>
               </div>
 
             </div>
