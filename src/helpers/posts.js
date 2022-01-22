@@ -62,8 +62,26 @@ export const handleSuppressPost = (id) => {
         return null;
     });
 }
-
-export const handleSuppressComment = (id) => {
+export const suppressPostInModeration = (id) => {
+    const requestOptions = {
+      method: "DELETE",
+      headers: {  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+    }
+    fetch(`http://localhost:8080/api/posts/delete/${id}`, requestOptions)
+    .then(response => {
+        alert('Post deleted')
+        window.location.reload()
+        return null;
+    })
+    .catch(function(error){
+        alert(error);
+        return null;
+    });
+}
+export const suppressCommentInModeration = (id) => {
     const requestOptions = {
       method: "DELETE",
       headers: {  'Accept': 'application/json',
@@ -74,6 +92,7 @@ export const handleSuppressComment = (id) => {
     fetch(`http://localhost:8080/api/posts/comment/${id}`, requestOptions)
     .then(response => {
         alert('Comment deleted')
+        window.location.reload()
         return null;
     })
     .catch(function(error){
@@ -136,8 +155,8 @@ export const handleSupressPostSignalment = (id) => {
     }
     fetch(`http://localhost:8080/api/post_signalments/${id}`, requestOptions)
     .then(response => {
-        window.location.reload()
         alert('Post\'s signalments deleted')
+        window.location.reload()
         return null;
     })
     .catch(function(error){
@@ -157,6 +176,7 @@ export const handleSupressCommentSignalment = (id) => {
     fetch(`http://localhost:8080/api/comment_signalments/${id}`, requestOptions)
     .then(response => {
         alert('Comment\'s signalments deleted')
+        window.location.reload()
         return null;
     })
     .catch(function(error){

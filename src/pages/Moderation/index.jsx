@@ -54,15 +54,15 @@ function Moderation(){
                 <section className="moderation-dashboard">
                   <div className="moderation-dashboard-posts">
                     <h3>Posts signalés</h3>
-                    { postSignalments && postSignalments.map(signalment => (
-                        <Signalment signalment={signalment} />
+                    { postSignalments && postSignalments.map(postSignalment => (
+                        <Signalment signalment={postSignalment} />
                     ))
                     }
                   </div>
                   <div className="moderation-dashboard-comments">
                     <h3>Commentaires signalés</h3>
-                    { commentSignalments && commentSignalments.map(signalment => (
-                        <Signalment signalment={signalment} />
+                    { commentSignalments && commentSignalments.map(commentSignalment => (
+                        <Signalment signalment={commentSignalment} />
                     ))
                     }
                   </div>
