@@ -175,7 +175,7 @@ a.profile-form-button {
     margin-top: 20px;
     font-size: 20px;
   }
-  .profile-form-buttons a {
+  div.profile-form-button {
     font-size: 20px;
   }
    .profile-form-buttons input {

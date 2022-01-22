@@ -147,7 +147,7 @@ function Profile(){
                         </div>
                         <div className="profile-form-buttons">
                           <input type="submit" className="profile-form-button" value="Envoyer" onClick={ handleProfile }/>
-                          <a href="#" className="profile-form-button" onClick={ handleProfile } >Annuler</a>
+                          <div className="profile-form-button" onClick={ handleProfile } >Annuler</div>
                         </div>
                       </form>
                       </>
