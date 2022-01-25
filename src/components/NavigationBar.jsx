@@ -5,7 +5,7 @@ import navImage from '../assets/nav_img.png';
 import '../styles/NavigationBar.css';
 
 function NavigationBar(){
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
   useEffect(() => {
       function getUser(){
           const requestOptions = {

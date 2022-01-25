@@ -28,7 +28,7 @@ function Profile(){
             .then(response => response.json())
             .then(data => {
                 alert("Votre profil a bien été modifié !")
-                localStorage.setItem('img', data.user.imageUrl)
+                window.location.reload()
                 return null;
             })
             .catch(function(error){
@@ -50,6 +50,7 @@ function Profile(){
                 .then(response => response.json())
                 .then(data => {
                     localStorage.setItem('img', data.user.imageUrl)
+                    window.location.reload()
                     return null;
                 })
                 .catch(function(error){

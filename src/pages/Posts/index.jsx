@@ -7,7 +7,7 @@ import './posts.css';
 
 function Posts(){
     const userId = parseInt(localStorage.getItem('id'));
-    const [posts, setPosts] = useState(null);
+    const [posts, setPosts] = useState([]);
     const [page, setPage] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
     const perPage = 5;

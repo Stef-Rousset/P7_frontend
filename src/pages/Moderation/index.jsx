@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react';
 import './moderation.css';
 
 function Moderation(){
-    const [ postSignalments, setPostSignalments ] = useState()
-    const [ commentSignalments, setCommentSignalments ] = useState()
+    const [ postSignalments, setPostSignalments ] = useState([])
+    const [ commentSignalments, setCommentSignalments ] = useState([])
     useEffect(() => {
         function getPostSignalments(){
             fetch('http://localhost:8080/api/post_signalments/index', {
