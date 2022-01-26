@@ -22,7 +22,7 @@ function Comments(props){
                                     )
             })
             .then(response => response.json())
-            .then(post => {
+            .then(comment => {
                 alert("Votre commentaire a bien été crée !")
                 window.location.reload()
             })

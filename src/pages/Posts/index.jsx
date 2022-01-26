@@ -12,9 +12,9 @@ function Posts(){
     const [currentPage, setCurrentPage] = useState(1);
     const perPage = 5;
     let location = useLocation();
+
     useEffect(() => {
         function postsAll(){
-
             fetch("http://localhost:8080/api/posts/index/", {
                     method: "GET",
                     headers: {  'Accept': 'application/json',
@@ -33,7 +33,7 @@ function Posts(){
                 })
         }
         postsAll()
-    }, [location]); //pour que useEffect ne s'effectue qu'au premier render du composant
+    }, [location]);
       // fonctions pour gérer la pagination
       function currentData(posts) {
           const begin = (currentPage - 1) * perPage;
@@ -41,21 +41,23 @@ function Posts(){
           return posts.slice(begin, end);
       }
       function next(page) {
-          setCurrentPage(currentPage => Math.min(currentPage + 1, 10));
+          setCurrentPage(currentPage => Math.min(currentPage + 1, 5)); //Math.min renvoie le plus petit nb entre (currentPage + 1) et 5
       }
       function prev(page) {
-          setCurrentPage(currentPage => Math.max(currentPage - 1, 1));
+          setCurrentPage(currentPage => Math.max(currentPage - 1, 1)); // Math.max renvoie le plus gd nombre entre (currentPage - 1) et 1
       }
       function jump(page) {
           const pageNumber = Math.max(1, page);
-          setCurrentPage(currentPage => Math.min(pageNumber, 10));
+          setCurrentPage(currentPage => Math.min(pageNumber, 5));
       }
       const handleChange = (e, p) => {
-          setPage(p);
+          document.querySelector('.posts-container').scroll(0,0)
+          setPage(p)
           prev(p)
           next(p)
           jump(p)
       };
+
     return (
         <div className="posts">
           < HeaderTwo />
